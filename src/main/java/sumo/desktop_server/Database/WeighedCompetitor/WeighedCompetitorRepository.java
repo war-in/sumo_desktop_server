@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface WeighedCompetitorRepository extends JpaRepository<WeighedCompetitor, Long> {
     WeighedCompetitor findWeighedCompetitorByRegistrationId(Long registrationId);
+    WeighedCompetitor findWeighedCompetitorById(Long id);
 }

@@ -8,14 +8,14 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "WEIGHED_COMPETITIORS")
+@Table(name = "WEIGHED_COMPETITORS")
 @Getter
 @Setter
 public class WeighedCompetitor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "WEIGHED_COMPETITIOR_ID")
+    @Column(name = "WEIGHED_COMPETITOR_ID")
     private long id;
 
     @OneToOne
