@@ -3,10 +3,13 @@ package sumo.desktop_server.Controllers.Weigting;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import sumo.desktop_server.Database.Category.Category;
 import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetition;
 import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetitionRepository;
 import sumo.desktop_server.Database.Competition.Competition;
 import sumo.desktop_server.Database.Competition.CompetitionRepository;
+import sumo.desktop_server.Database.CompetitionType.CompetitionType;
+import sumo.desktop_server.Database.CompetitionType.CompetitionTypeRepository;
 import sumo.desktop_server.Database.Competitor.Competitor;
 import sumo.desktop_server.Database.Competitor.CompetitorRepository;
 import sumo.desktop_server.Database.Registrations.Registration;
@@ -42,7 +45,7 @@ public class WeightingController {
     }
 
     @PostMapping("/update-weighting-details")
-    public ResponseEntity<WeighedCompetitor> updateWeightingDetails(@RequestParam WeighedCompetitor weighedCompetitor) {
+    public ResponseEntity<WeighedCompetitor> updateWeightingDetails(@RequestBody WeighedCompetitor weighedCompetitor) {
         LocalDate date = LocalDate.now();
         weighedCompetitor.setDate(date);
 
@@ -62,24 +65,22 @@ public class WeightingController {
         for(CategoryAtCompetition category: categories) {
             List<Registration> registrations = registrationRepository.findRegistrationsByCategoryAtCompetition(category);
 
-            registrations.forEach(registration -> {
-                competitors.add(registration.getCompetitor());
-            });
+            registrations.forEach(registration -> competitors.add(registration.getCompetitor()));
         }
         return ResponseEntity.ok().body(competitors.stream().toList());
     }
 
     @GetMapping("/get-categories")
-    public ResponseEntity<List<CategoryAtCompetition>> getCategoriesByCompetitor(@RequestParam Long competitorId, @RequestParam Long competitionId) {
+    public ResponseEntity<List<Category>> getCategoriesByCompetitor(@RequestParam Long competitorId, @RequestParam Long competitionId) {
         Competitor competitor = competitorRepository.findCompetitorById(competitorId);
         Competition competition = competitionRepository.findCompetitionById(competitionId);
 
         List<Registration> registrations = registrationRepository.findRegistrationsByCompetitor(competitor);
         registrations = registrations.stream().filter(registration -> registration.getCategoryAtCompetition().getCompetition().equals(competition)).toList();
 
-        List<CategoryAtCompetition> categories = new ArrayList<>();
+        List<Category> categories = new ArrayList<>();
         for(Registration registration: registrations) {
-            categories.add(registration.getCategoryAtCompetition());
+            categories.add(registration.getCategoryAtCompetition().getCategory());
         }
 
         return ResponseEntity.ok().body(categories);
