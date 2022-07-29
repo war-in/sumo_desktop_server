@@ -4,14 +4,18 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import sumo.desktop_server.Controllers.Utils.Draw.CompetitorsAndDrawType;
+import sumo.desktop_server.Controllers.Utils.Draw.DataToSaveDraw;
+import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetition;
+import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetitionRepository;
 import sumo.desktop_server.Database.Competitor.Competitor;
+import sumo.desktop_server.Database.CompetitorInDraw.CompetitorInDraw;
+import sumo.desktop_server.Database.CompetitorInDraw.CompetitorInDrawRepository;
 import sumo.desktop_server.Database.DrawType.DrawType;
 import sumo.desktop_server.Database.DrawType.DrawTypeRepository;
 
 import javax.transaction.Transactional;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +24,9 @@ import java.util.stream.Stream;
 public class DrawServiceImpl implements DrawService {
 
     private final DrawTypeRepository drawTypeRepository;
+    private final CategoryAtCompetitionRepository categoryAtCompetitionRepository;
+    private final DrawRepository drawRepository;
+    private final CompetitorInDrawRepository competitorInDrawRepository;
 
     @Override
     public List<?> prepareDraw(CompetitorsAndDrawType competitorsAndDrawType) {
@@ -48,6 +55,24 @@ public class DrawServiceImpl implements DrawService {
 
             return List.of(createGroups(groups.get(0)), createGroups(groups.get(1)));
         }
+    }
+
+    @Override
+    public Draw saveDraw(DataToSaveDraw dataToSaveDraw) {
+        DrawType drawType = drawTypeRepository.findDrawTypeById(dataToSaveDraw.getDrawType().getId());
+        CategoryAtCompetition categoryAtCompetition = categoryAtCompetitionRepository.findCategoryAtCompetitionById(dataToSaveDraw.getCategoryAtCompetition().getId());
+
+        Draw draw = drawRepository.save(new Draw(0, categoryAtCompetition, drawType));
+
+        List<Competitor> competitors = dataToSaveDraw.getCompetitors();
+
+        int index = 0;
+        competitors.forEach(competitor -> {
+            CompetitorInDraw competitorInDraw = new CompetitorInDraw(0, draw, competitor, index);
+            competitorInDrawRepository.save(competitorInDraw);
+        });
+
+        return draw;
     }
 
     private List<List<Competitor>> splitRunnerUpAndMaster(List<Competitor> competitors) {

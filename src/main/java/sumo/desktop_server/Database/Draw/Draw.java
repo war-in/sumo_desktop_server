@@ -1,18 +1,20 @@
 package sumo.desktop_server.Database.Draw;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetition;
 import sumo.desktop_server.Database.DrawType.DrawType;
 
 import javax.persistence.*;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "DRAWS")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Draw {
 
     @Id

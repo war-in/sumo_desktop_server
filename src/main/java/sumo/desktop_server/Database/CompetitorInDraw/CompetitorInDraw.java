@@ -1,6 +1,8 @@
 package sumo.desktop_server.Database.CompetitorInDraw;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import sumo.desktop_server.Database.Competitor.Competitor;
 import sumo.desktop_server.Database.Draw.Draw;
@@ -11,6 +13,8 @@ import javax.persistence.*;
 @Table(name = "COMPETITORS_IN_DRAWS")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class CompetitorInDraw {
 
     @Id
