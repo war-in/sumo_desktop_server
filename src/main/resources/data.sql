@@ -17,8 +17,8 @@ INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_
 INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (1, 'Marcin', 'Warchoł', '727731521', 'link', '2000-09-02', 'male');
 INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (2, 'Gabi', 'Erazmus', 'numer', 'link', '2000-05-03', 'female');
 
-INSERT into COMPETITORS (competitor_id, personal_details_id, status) values (1, 1, 0);
-INSERT into COMPETITORS (competitor_id, personal_details_id, status) values (2, 2, 0);
+INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (1, 1, 0, 'Poland');
+INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (2, 2, 0, 'Poland');
 
 INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (1, 1, 1);
 INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (2, 2, 2);

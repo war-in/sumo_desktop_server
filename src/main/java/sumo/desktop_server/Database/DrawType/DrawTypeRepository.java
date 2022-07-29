@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface DrawTypeRepository extends JpaRepository<DrawType, Long> {
     List<DrawType> findDrawTypesByRegion(Region region);
+    DrawType findDrawTypeById(Long id);
 }

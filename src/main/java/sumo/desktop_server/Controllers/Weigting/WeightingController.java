@@ -26,15 +26,15 @@ public class WeightingController {
     private final CompetitionService competitionService;
     private final CompetitorService competitorService;
 
-    @GetMapping("/get-weighting-details")
+    @GetMapping("/get-weighing-details")
     public ResponseEntity<WeighedCompetitor> getWeighingDetails(@RequestParam Long categoryAtCompetitionId, @RequestParam Long competitorId) {
         WeighedCompetitor weighedCompetitor = weighedCompetitorService.getCompetitorsWeighingDetailsAtSpecifiedCategory(categoryAtCompetitionId, competitorId);
 
         return ResponseEntity.ok().body(weighedCompetitor);
     }
 
-    @PostMapping("/update-weighting-details")
-    public ResponseEntity<WeighedCompetitor> updateWeightingDetails(@RequestBody WeighedCompetitor weighedCompetitor) {
+    @PostMapping("/update-weighing-details")
+    public ResponseEntity<WeighedCompetitor> updateWeighingDetails(@RequestBody WeighedCompetitor weighedCompetitor) {
         return ResponseEntity.ok().body(weighedCompetitorService.setWeighingDetails(weighedCompetitor));
     }
 
