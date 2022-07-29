@@ -18,7 +18,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Transactional
-@Slf4j
 public class CompetitionServiceImpl implements CompetitionService {
 
     private final RegistrationRepository registrationRepository;

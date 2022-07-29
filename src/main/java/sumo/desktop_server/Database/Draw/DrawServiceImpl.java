@@ -11,12 +11,10 @@ import sumo.desktop_server.Database.DrawType.DrawTypeRepository;
 import javax.transaction.Transactional;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
 @Transactional
-@Slf4j
 public class DrawServiceImpl implements DrawService {
 
     private final DrawTypeRepository drawTypeRepository;

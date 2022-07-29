@@ -38,7 +38,7 @@ public class DrawController {
         return ResponseEntity.ok().body(drawTypes);
     }
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<List<?>> prepareDraw(@RequestBody CompetitorsAndDrawType competitorsAndDrawType) {
         List<?> preparedCompetitors = drawService.prepareDraw(competitorsAndDrawType);
 
