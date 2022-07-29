@@ -12,7 +12,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Transactional
-@Slf4j
 public class DrawTypeServiceImpl implements DrawTypeService {
 
     private final DrawTypeRepository drawTypeRepository;

@@ -33,8 +33,8 @@ public class WeightingController {
         return ResponseEntity.ok().body(weighedCompetitor);
     }
 
-    @PostMapping("/update-weighting-details")
-    public ResponseEntity<WeighedCompetitor> updateWeightingDetails(@RequestBody WeighedCompetitor weighedCompetitor) {
+    @PostMapping("/update-weighing-details")
+    public ResponseEntity<WeighedCompetitor> updateWeighingDetails(@RequestBody WeighedCompetitor weighedCompetitor) {
         return ResponseEntity.ok().body(weighedCompetitorService.setWeighingDetails(weighedCompetitor));
     }
 

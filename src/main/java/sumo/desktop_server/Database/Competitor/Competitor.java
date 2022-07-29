@@ -1,6 +1,8 @@
 package sumo.desktop_server.Database.Competitor;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -9,6 +11,8 @@ import javax.persistence.*;
 @Table(name = "COMPETITORS")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Competitor {
 
     @Id
@@ -22,4 +26,7 @@ public class Competitor {
 
     @Column(name = "STATUS")
     private CompetitorsStatus status;
+
+    @Column(name = "COUNTRY")
+    private String country;
 }

@@ -16,7 +16,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Transactional
-@Slf4j
 public class CompetitorServiceImpl implements CompetitorService {
 
     private final RegistrationRepository registrationRepository;

@@ -16,7 +16,6 @@ import java.time.LocalDate;
 @Service
 @RequiredArgsConstructor
 @Transactional
-@Slf4j
 public class WeighedCompetitorServiceImpl implements WeighedCompetitorService{
 
     private final RegistrationRepository registrationRepository;
