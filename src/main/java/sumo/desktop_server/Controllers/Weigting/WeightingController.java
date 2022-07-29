@@ -26,7 +26,7 @@ public class WeightingController {
     private final CompetitionService competitionService;
     private final CompetitorService competitorService;
 
-    @GetMapping("/get-weighting-details")
+    @GetMapping("/weighting-details")
     public ResponseEntity<WeighedCompetitor> getWeighingDetails(@RequestParam Long categoryAtCompetitionId, @RequestParam Long competitorId) {
         WeighedCompetitor weighedCompetitor = weighedCompetitorService.getCompetitorsWeighingDetailsAtSpecifiedCategory(categoryAtCompetitionId, competitorId);
 
@@ -38,14 +38,14 @@ public class WeightingController {
         return ResponseEntity.ok().body(weighedCompetitorService.setWeighingDetails(weighedCompetitor));
     }
 
-    @GetMapping("/get-competitors")
+    @GetMapping("/competitors")
     public ResponseEntity<List<Competitor>> getCompetitors(@RequestParam Long competitionId) {
         List<Competitor> competitors = competitionService.getAllCompetitors(competitionId);
 
         return ResponseEntity.ok().body(competitors);
     }
 
-    @GetMapping("/get-categories")
+    @GetMapping("/categories")
     public ResponseEntity<List<Category>> getCategoriesByCompetitor(@RequestParam Long competitorId, @RequestParam Long competitionId) {
         List<Category> categories = competitorService.getCompetitorCategoriesAtSpecifiedCompetition(competitorId, competitionId);
 

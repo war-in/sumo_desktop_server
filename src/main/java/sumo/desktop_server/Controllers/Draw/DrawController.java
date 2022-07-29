@@ -22,14 +22,14 @@ public class DrawController {
     private final CompetitionService competitionService;
     private final DrawTypeService drawTypeService;
 
-    @GetMapping("/get-categories-with-competitors")
+    @GetMapping("/categories-with-competitors")
     public ResponseEntity<List<CategoryAndCompetitors>> getCategoriesWithCompetitors(@RequestParam Long competitionId) {
         List<CategoryAndCompetitors> categoriesAndCompetitors = competitionService.getCategoriesAndCompetitors(competitionId);
 
         return ResponseEntity.ok().body(categoriesAndCompetitors);
     }
 
-    @GetMapping("/get-suggested-draw-types")
+    @GetMapping("/suggested-draw-types")
     public ResponseEntity<List<DrawType>> getSuggestedDrawTypes(@RequestParam Long numberOfCompetitors, @RequestParam String region) {
         List<DrawType> drawTypes = drawTypeService.getDrawTypesAboveSpecifiedNumberOfCompetitors(numberOfCompetitors, region);
 
