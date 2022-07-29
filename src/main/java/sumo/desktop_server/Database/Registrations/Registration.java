@@ -8,14 +8,14 @@ import sumo.desktop_server.Database.Competitor.Competitor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "REGISTRATION")
+@Table(name = "REGISTRATIONS")
 @Getter
 @Setter
 public class Registration {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "REGITRATION_ID")
+    @Column(name = "REGISTRATION_ID")
     private long id;
 
     @ManyToOne

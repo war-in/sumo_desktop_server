@@ -1,4 +1,4 @@
-package sumo.desktop_server.Database.WeightedCompetitor;
+package sumo.desktop_server.Database.WeighedCompetitor;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,14 +8,14 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "WEIGHTED_COMPETITIORS")
+@Table(name = "WEIGHED_COMPETITORS")
 @Getter
 @Setter
-public class WeightedCompetitor {
+public class WeighedCompetitor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "WEIGHTED_COMPETITIOR_ID")
+    @Column(name = "WEIGHED_COMPETITOR_ID")
     private long id;
 
     @OneToOne

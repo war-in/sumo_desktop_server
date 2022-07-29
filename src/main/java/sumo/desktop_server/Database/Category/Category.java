@@ -29,7 +29,4 @@ public class Category {
     @ManyToOne
     @JoinColumn(name = "SEX")
     private Sex sex;
-
-    @Column(name = "DATE")
-    private LocalDate date;
 }

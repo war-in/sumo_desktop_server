@@ -6,6 +6,7 @@ import sumo.desktop_server.Database.Category.Category;
 import sumo.desktop_server.Database.Competition.Competition;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "CATEGORIES_AT_COMPETITIONS")
@@ -25,4 +26,7 @@ public class CategoryAtCompetition {
     @ManyToOne
     @JoinColumn(name = "CATEGORY_ID")
     private Category category;
+
+    @Column(name = "DATE")
+    private LocalDate date;
 }
