@@ -14,8 +14,8 @@ INSERT into CATEGORIES (category_id, age_category_id, weight_category, sex) valu
 INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_id, category_id, date) values (1, 1, 1, '2022-07-19');
 INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_id, category_id, date) values (2, 1, 2, '2022-07-19');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (1, 'Marcin', 'Warchoł', '727731521', 'link', '2000-09-02', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (2, 'Gabi', 'Erazmus', 'numer', 'link', '2000-05-03', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (1, 'Marcin', 'Warchoł', '727731521', 'https://avatars.githubusercontent.com/u/61011609?s=400&u=41647a0aad302f518e14d40cd980f2f41278c57e&v=4', '2000-09-02', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (2, 'Gabi', 'Erazmus', 'numer', 'https://media.allure.com/photos/5a26c1d8753d0c2eea9df033/1:1/w_1394,h_1394,c_limit/mostbeautiful.jpg', '2000-05-03', 'female');
 
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (1, 1, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (2, 2, 0, 'Poland');
