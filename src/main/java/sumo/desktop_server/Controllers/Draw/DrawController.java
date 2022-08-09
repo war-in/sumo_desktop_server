@@ -5,8 +5,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sumo.desktop_server.Controllers.Utils.Draw.CategoryAndCompetitors;
 import sumo.desktop_server.Controllers.Utils.Draw.CompetitorsAndDrawType;
+import sumo.desktop_server.Controllers.Utils.Draw.DataToSaveDraw;
 import sumo.desktop_server.Database.Competition.CompetitionService;
 import sumo.desktop_server.Database.Competitor.Competitor;
+import sumo.desktop_server.Database.Draw.Draw;
 import sumo.desktop_server.Database.Draw.DrawService;
 import sumo.desktop_server.Database.DrawType.DrawType;
 import sumo.desktop_server.Database.DrawType.DrawTypeRepository;
@@ -43,5 +45,12 @@ public class DrawController {
         List<?> preparedCompetitors = drawService.prepareDraw(competitorsAndDrawType);
 
         return ResponseEntity.ok().body(preparedCompetitors);
+    }
+
+    @PostMapping("/save-draw")
+    public ResponseEntity<Draw> saveDraw(@RequestBody DataToSaveDraw dataToSaveDraw) {
+        Draw draw = drawService.saveDraw(dataToSaveDraw);
+
+        return ResponseEntity.ok().body(draw);
     }
 }
