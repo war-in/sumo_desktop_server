@@ -59,7 +59,9 @@ public class DrawServiceImpl implements DrawService {
     @Override
     public Draw saveDraw(DataToSaveDraw dataToSaveDraw) {
         DrawType drawType = drawTypeRepository.findDrawTypeById(dataToSaveDraw.getDrawType().getId());
-        CategoryAtCompetition categoryAtCompetition = categoryAtCompetitionRepository.findCategoryAtCompetitionById(dataToSaveDraw.getCategoryAtCompetition().getId());
+        CategoryAtCompetition categoryAtCompetition =
+            categoryAtCompetitionRepository.findCategoryAtCompetitionById(
+                dataToSaveDraw.getCategoryAtCompetitionId());
 
         Draw draw = drawRepository.save(new Draw(0, categoryAtCompetition, drawType));
 
