@@ -62,7 +62,11 @@ public class DrawServiceImpl implements DrawService {
             categoryAtCompetitionRepository.findCategoryAtCompetitionById(
                 dataToSaveDraw.getCategoryAtCompetitionId());
 
-        Draw draw = drawRepository.save(new Draw(0, categoryAtCompetition, drawType));
+        Draw drawFromDatabase = drawRepository.findDrawById(categoryAtCompetition.getId());
+        if (drawFromDatabase == null)
+            drawFromDatabase = new Draw(categoryAtCompetition.getId(), categoryAtCompetition, drawType);
+
+        Draw draw = drawRepository.save(drawFromDatabase);
 
         List<Competitor> competitors = dataToSaveDraw.getCompetitors();
 
