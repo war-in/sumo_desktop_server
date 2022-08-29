@@ -1,11 +1,13 @@
 package sumo.desktop_server.Database.Draw;
 
 import lombok.RequiredArgsConstructor;
+import net.minidev.json.JSONObject;
 import org.springframework.stereotype.Service;
 import sumo.desktop_server.Controllers.Utils.Draw.CompetitorsAndDrawType;
 import sumo.desktop_server.Controllers.Utils.Draw.DataToSaveDraw;
 import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetition;
 import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetitionRepository;
+import sumo.desktop_server.Database.Competition.Competition;
 import sumo.desktop_server.Database.Competitor.Competitor;
 import sumo.desktop_server.Database.CompetitorInDraw.CompetitorInDraw;
 import sumo.desktop_server.Database.CompetitorInDraw.CompetitorInDrawRepository;
@@ -91,6 +93,28 @@ public class DrawServiceImpl implements DrawService {
         return competitorInDraw.stream()
                 .sorted(Comparator.comparing(CompetitorInDraw::getNumberOfPlaceInDraw))
                 .map(CompetitorInDraw::getCompetitor).toList();
+    }
+
+    @Override
+    public JSONObject getDrawsDetailsByCompetition(Competition competition) {
+        List<Draw> allDraws = drawRepository.findAllBy();
+        List<Draw> draws = allDraws.stream().filter(draw -> draw.getCategoryAtCompetition().getCompetition() == competition).toList();
+
+        List<JSONObject> dataset = new ArrayList<>();
+        draws.forEach(draw -> {
+            JSONObject categoryData = new JSONObject();
+            categoryData.appendField("weight", draw.getCategoryAtCompetition().getCategory().getAgeCategory().getName());
+            categoryData.appendField("age", draw.getCategoryAtCompetition().getCategory().getAgeCategory().getName());
+            categoryData.appendField("sex", draw.getCategoryAtCompetition().getCategory().getSex().getSex());
+
+            dataset.add(categoryData);
+        });
+
+        JSONObject result = new JSONObject();
+        result.appendField("dataset", dataset);
+        result.appendField("draws", draws);
+
+        return result;
     }
 
     private List<List<Competitor>> splitRunnerUpAndMaster(List<Competitor> competitors) {
