@@ -9,6 +9,7 @@ import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetition;
 import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetitionRepository;
 import sumo.desktop_server.Database.Competition.Competition;
 import sumo.desktop_server.Database.Competitor.Competitor;
+import sumo.desktop_server.Database.Competitor.CompetitorRepository;
 import sumo.desktop_server.Database.CompetitorInDraw.CompetitorInDraw;
 import sumo.desktop_server.Database.CompetitorInDraw.CompetitorInDrawRepository;
 import sumo.desktop_server.Database.DrawType.DrawType;
@@ -27,6 +28,7 @@ public class DrawServiceImpl implements DrawService {
     private final CategoryAtCompetitionRepository categoryAtCompetitionRepository;
     private final DrawRepository drawRepository;
     private final CompetitorInDrawRepository competitorInDrawRepository;
+    private final CompetitorRepository competitorRepository;
 
     @Override
     public List<Competitor> prepareDraw(CompetitorsAndDrawType competitorsAndDrawType) {
@@ -47,7 +49,7 @@ public class DrawServiceImpl implements DrawService {
             int numOfFreeFights = drawType.getNumberOfCompetitors() - numOfCompetitorsWithoutGroups;
 
             while (numOfFreeFights > 0) {
-                competitors.add(new Competitor(null, null, null, "FreeFight"));
+                competitors.add(competitorRepository.findCompetitorById(0L));
                 numOfFreeFights--;
             }
 
