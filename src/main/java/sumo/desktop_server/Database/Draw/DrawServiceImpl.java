@@ -1,7 +1,6 @@
 package sumo.desktop_server.Database.Draw;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import sumo.desktop_server.Controllers.Utils.Draw.CompetitorsAndDrawType;
 import sumo.desktop_server.Controllers.Utils.Draw.DataToSaveDraw;
@@ -28,7 +27,7 @@ public class DrawServiceImpl implements DrawService {
     private final CompetitorInDrawRepository competitorInDrawRepository;
 
     @Override
-    public List<?> prepareDraw(CompetitorsAndDrawType competitorsAndDrawType) {
+    public List<Competitor> prepareDraw(CompetitorsAndDrawType competitorsAndDrawType) {
         DrawType drawType = drawTypeRepository.findDrawTypeById(competitorsAndDrawType.getDrawType().getId());
         List<Competitor> competitors = competitorsAndDrawType.getCompetitors();
         int numOfCompetitorsWithoutGroups = competitors.size();
@@ -36,11 +35,11 @@ public class DrawServiceImpl implements DrawService {
         if (drawType.getNumberOfCompetitors() <= 5) {
             Collections.shuffle(competitors);
 
-            return List.of(competitors);
+            return competitors;
         }
 
         if (drawType.getNumberOfCompetitors() <= 10) {
-            return splitRunnerUpAndMaster(competitors);
+            return splitRunnerUpAndMaster(competitors).stream().flatMap(List::stream).toList();
         }
         else {
             int numOfFreeFights = drawType.getNumberOfCompetitors() - numOfCompetitorsWithoutGroups;
@@ -52,7 +51,7 @@ public class DrawServiceImpl implements DrawService {
 
             List<List<Competitor>> groups = splitRunnerUpAndMaster(competitors);
 
-            return List.of(createGroups(groups.get(0)), createGroups(groups.get(1)));
+            return flattenNestedLists(List.of(createGroups(groups.get(0)), createGroups(groups.get(1))));
         }
     }
 
@@ -138,5 +137,14 @@ public class DrawServiceImpl implements DrawService {
         Collections.shuffle(groups);
 
         return groups;
+    }
+
+    private List<Competitor> flattenNestedLists(List<List<?>> nestedList) {
+        List<?> flattenedList = nestedList.stream().flatMap(List::stream).toList();
+
+        if(flattenedList.get(0) instanceof List)
+            return this.flattenNestedLists((List<List<?>>) flattenedList);
+
+        return (List<Competitor>) flattenedList;
     }
 }
