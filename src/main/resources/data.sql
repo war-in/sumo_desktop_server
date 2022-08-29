@@ -71,3 +71,4 @@ INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (4, 
 INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (5, 64, 'EUROPE');
 
 
+INSERT into DRAWS (draw_id, category_at_competition_id, draw_type_id) values (1,1,1);
