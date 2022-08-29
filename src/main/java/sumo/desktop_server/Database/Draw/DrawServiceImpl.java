@@ -70,13 +70,27 @@ public class DrawServiceImpl implements DrawService {
 
         List<Competitor> competitors = dataToSaveDraw.getCompetitors();
 
-        int index = 0;
-        competitors.forEach(competitor -> {
-            CompetitorInDraw competitorInDraw = new CompetitorInDraw(0, draw, competitor, index);
+        for (int i=0; i<competitors.size(); i++) {
+            CompetitorInDraw competitorInDraw = new CompetitorInDraw();
+            competitorInDraw.setDraw(draw);
+            competitorInDraw.setCompetitor(competitors.get(i));
+            competitorInDraw.setNumberOfPlaceInDraw(i);
+
             competitorInDrawRepository.save(competitorInDraw);
-        });
+        }
 
         return draw;
+    }
+
+    @Override
+    public List<Competitor> getCompetitorsInDraw(Long drawId) {
+        Draw draw = drawRepository.findDrawById(drawId);
+        System.out.println(draw);
+        List<CompetitorInDraw> competitorInDraw = competitorInDrawRepository.findAllByDraw(draw);
+
+        return competitorInDraw.stream()
+                .sorted(Comparator.comparing(CompetitorInDraw::getNumberOfPlaceInDraw))
+                .map(CompetitorInDraw::getCompetitor).toList();
     }
 
     private List<List<Competitor>> splitRunnerUpAndMaster(List<Competitor> competitors) {

@@ -11,11 +11,9 @@ import sumo.desktop_server.Database.Competitor.Competitor;
 import sumo.desktop_server.Database.Draw.Draw;
 import sumo.desktop_server.Database.Draw.DrawService;
 import sumo.desktop_server.Database.DrawType.DrawType;
-import sumo.desktop_server.Database.DrawType.DrawTypeRepository;
 import sumo.desktop_server.Database.DrawType.DrawTypeService;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/draw")
@@ -41,8 +39,8 @@ public class DrawController {
     }
 
     @PostMapping
-    public ResponseEntity<List<?>> prepareDraw(@RequestBody CompetitorsAndDrawType competitorsAndDrawType) {
-        List<?> preparedCompetitors = drawService.prepareDraw(competitorsAndDrawType);
+    public ResponseEntity<List<Competitor>> prepareDraw(@RequestBody CompetitorsAndDrawType competitorsAndDrawType) {
+        List<Competitor> preparedCompetitors = drawService.prepareDraw(competitorsAndDrawType);
 
         return ResponseEntity.ok().body(preparedCompetitors);
     }
@@ -52,5 +50,11 @@ public class DrawController {
         Draw draw = drawService.saveDraw(dataToSaveDraw);
 
         return ResponseEntity.ok().body(draw);
+    }
+
+    @GetMapping("/ready-draw")
+    public ResponseEntity<List<Competitor>> getReadyDraw(@RequestParam Long drawId) {
+        List<Competitor> competitors = drawService.getCompetitorsInDraw(drawId);
+        return ResponseEntity.ok().body(competitors);
     }
 }
