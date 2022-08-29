@@ -38,7 +38,7 @@ public class DrawServiceImpl implements DrawService {
             return competitors;
         }
 
-        if (drawType.getNumberOfCompetitors() <= 10) {
+        if (drawType.getNumberOfCompetitors() == 10) {
             return splitRunnerUpAndMaster(competitors).stream().flatMap(List::stream).toList();
         }
         else {
