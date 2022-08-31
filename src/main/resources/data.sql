@@ -246,6 +246,16 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (34, 34, 0, 'Italy');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (35, 35, 0, 'Italy');
 
+--Registrations
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 32, 30);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 38, 31);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 40, 32);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 53, 33);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 56, 34);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 58, 31);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 32);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 64, 35);
+
 
 --Hungary
 --Personal Details
@@ -290,6 +300,53 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (58, 58, 0, 'Hungary');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (59, 59, 0, 'Hungary');
 
+--Registrations
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 13, 40);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 13, 41);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 18, 42);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 18, 43);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 19, 45);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 20, 44);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 20, 46);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 21, 47);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 21, 48);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 22, 49);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 23, 50);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 24, 51);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 24, 52);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 25, 46);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 25, 52);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 33, 40);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 33, 41);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 38, 53);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 38, 42);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 39, 45);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 40, 54);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 40, 46);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 41, 47);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 41, 44);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 42, 55);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 43, 50);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 43, 49);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 44, 52);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 52, 57);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 53, 40);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 58, 53);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 54);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 46);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 61, 47);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 62, 55);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 63, 50);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 63, 58);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 64, 59);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 64, 51);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 65, 59);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 65, 58);
+
 
 --Norway
 
@@ -323,6 +380,24 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (71, 71, 0, 'Norway');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (72, 72, 0, 'Norway');
 
+--Registrations
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 12, 60);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 20, 61);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 32, 60);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 40, 61);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 50, 62);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 51, 63);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 52, 60);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 53, 64);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 55, 65);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 58, 66);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 59, 67);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 68);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 61, 69);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 62, 70);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 63, 71);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 64, 72);
+
 
 --Germany
 
@@ -354,6 +429,34 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (90, 90, 0, 'Germany');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (91, 91, 0, 'Germany');
 
+--Registrations
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 13, 80);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 16, 81);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 16, 82);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 17, 81);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 17, 82);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 20, 83);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 33, 80);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 36, 81);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 36, 82);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 37, 81);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 37, 82);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 40, 83);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 53, 80);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 53, 84);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 54, 85);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 55, 86);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 55, 87);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 56, 81);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 56, 82);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 57, 81);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 57, 81);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 58, 88);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 89);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 61, 89);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 63, 90);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 63, 91);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 65, 90);
 
 
 --GEORGIA
@@ -382,6 +485,35 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (108, 108, 0, 'Georgia');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (109, 109, 0, 'Georgia');
 
+--Registrations
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 12, 100);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 15, 101);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 17, 100);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 17, 101);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 20, 102);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 21, 103);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 22, 104);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 24, 105);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 25, 105);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 25, 104);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 32, 100);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 35, 101);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 37, 100);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 37, 100);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 40, 102);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 41, 106);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 42, 104);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 44, 105);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 44, 107);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 45, 105);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 45, 107);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 59, 108);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 61, 106);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 64, 107);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 64, 109);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 65, 107);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 65, 109);
+
 
 --Greece
 
@@ -394,6 +526,14 @@ INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, 
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (110, 110, 0, 'Greece');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (111, 111, 0, 'Greece');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (112, 112, 0, 'Greece');
+
+--Registrations
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 13, 112);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 33, 112);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 53, 112);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 40, 111);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 111);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 59, 110);
 
 
 --Estonia
@@ -434,6 +574,56 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (134, 134, 0, 'Estonia');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (135, 135, 0, 'Estonia');
 
+--Registrations
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 11, 120);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 15, 121);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 16, 122);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 16, 123);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 17, 122);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 17, 121);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 20, 124);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 20, 125);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 21, 126);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 22, 127);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 23, 128);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 24, 129);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 24, 130);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 25, 129);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 25, 130);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 31, 120);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 34, 131);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 35, 121);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 36, 122);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 36, 123);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 37, 122);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 37, 123);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 40, 124);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 40, 125);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 41, 126);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 42, 127);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 43, 128);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 44, 129);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 44, 130);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 45, 129);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 45, 130);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 51, 120);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 54, 131);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 55, 121);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 56, 123);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 58, 132);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 133);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 125);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 61, 134);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 61, 126);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 62, 127);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 63, 135);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 63, 128);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 64, 130);
 
 
 --Azerbaijan
@@ -461,6 +651,24 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (147, 147, 0, 'Azerbaijan');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (148, 148, 0, 'Azerbaijan');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (149, 149, 0, 'Azerbaijan');
+
+--Registrations
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 13, 140);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 30, 141);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 33, 140);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 38, 142);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 44, 143);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 45, 143);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 58, 144);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 58, 142);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 59, 145);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 59, 146);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 147);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 62, 148);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 62, 149);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 64, 143);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 65, 143);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 50, 141);
 
 
 --Ukraine
@@ -542,6 +750,72 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (182, 182, 0, 'Ukraine');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (183, 183, 0, 'Ukraine');
 
+--Registrations
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 10, 150);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 11, 151);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 12, 152);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 12, 153);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 13, 154);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 13, 155);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 14, 156);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 14, 157);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 15, 158);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 15, 159);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 16, 160);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 16, 161);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 19, 162);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 20, 163);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 21, 164);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 21, 165);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 23, 166);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 30, 150);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 31, 151);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 32, 152);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 32, 153);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 33, 154);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 33, 167);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 34, 156);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 34, 157);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 35, 168);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 35, 159);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 36, 160);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 36, 161);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 39, 162);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 40, 163);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 41, 164);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 41, 169);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 42, 165);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 43, 166);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 43, 170);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 50, 150);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 50, 171);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 51, 151);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 52, 172);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 52, 173);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 53, 154);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 53, 167);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 54, 164);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 54, 156);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 55, 168);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 55, 175);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 56, 176);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 56, 177);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 58, 178);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 59, 162);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 179);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 180);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 61, 169);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 61, 181);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 62, 165);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 63, 170);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 64, 182);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 64, 183);
+
 
 --Bulgaria
 
@@ -584,6 +858,35 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (203, 203, 0, 'Bulgaria');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (204, 204, 0, 'Bulgaria');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (205, 205, 0, 'Bulgaria');
+
+--Registrations
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 10, 190);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 11, 191);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 12, 192);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 13, 193);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 18, 194);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 31, 195);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 38, 194);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 50, 190);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 51, 191);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 51, 195);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 52, 192);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 53, 193);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 55, 196);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 58, 197);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 58, 198);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 59, 199);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 59, 200);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 201);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 61, 202);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 61, 203);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 62, 204);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 63, 205);
 
 
 --Poland
@@ -632,7 +935,6 @@ INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, 
 INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (248, 'Paulina', 'Żemła', null, 'PAULINA ŻEMŁA.jpg', '2001-01-01', 'female');
 INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (249, 'Magdalena', 'Kaźmierczak', null, 'blank.jpg', '2000-01-01', 'female');
 INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (250, 'Paulina', 'Zarychta', null, 'PAULINA ZARYCHTA .jpg', '2002-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (251, 'Marta', 'Gruszkiewicz', null, 'MARTA GRUSZKIEWICZ.jpg', '2002-01-01', 'female');
 
 INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (252, 'Paweł', 'Pieprzak', null, 'PAWEŁ PIEPRZAK.jpg', '1988-01-01', 'male');
 INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (253, 'Mateusz', 'Konieczny', null, 'MATEUSZ KONIECZNY.jpg', '1991-01-01', 'male');
@@ -693,7 +995,6 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (248, 248, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (249, 249, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (250, 250, 0, 'Poland');
-INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (251, 251, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (252, 252, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (253, 253, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (254, 254, 0, 'Poland');
@@ -711,139 +1012,92 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (267, 267, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (268, 268, 0, 'Poland');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--Registrations
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 18, 210);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 18, 211);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 19, 212);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 19, 213);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 20, 214);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 20, 215);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 21, 216);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 21, 217);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 22, 218);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 22, 219);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 23, 220);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 23, 221);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 24, 222);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 24, 223);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 30, 224);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 30, 225);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 31, 226);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 31, 227);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 32, 228);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 32, 229);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 33, 230);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 33, 231);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 34, 232);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 34, 233);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 35, 234);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 35, 235);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 36, 236);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 36, 237);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 38, 238);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 38, 239);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 39, 212);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 39, 240);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 40, 214);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 40, 215);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 41, 216);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 41, 241);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 42, 242);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 42, 218);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 43, 220);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 43, 243);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 44, 222);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 44, 223);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 30, 224);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 30, 245);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 31, 226);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 31, 246);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 32, 247);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 32, 248);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 33, 231);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 33, 249);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 34, 250);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 34, 233);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 35, 234);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 35, 235);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 36, 236);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 36, 237);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 58, 252);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 58, 238);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 59, 253);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 59, 240);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 214);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 60, 215);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 61, 254);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 62, 255);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 62, 256);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 63, 257);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 63, 243);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 64, 258);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 64, 259);
+
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 50, 225);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 50, 224);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 51, 260);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 51, 261);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 52, 247);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 52, 228);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 53, 263);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 53, 231);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 54, 264);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 54, 265);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 55, 266);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 55, 267);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 56, 236);
+INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (20, 56, 268);
