@@ -2,19 +2,20 @@ package sumo.desktop_server.Controllers.Weigting;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import sumo.desktop_server.Database.Category.Category;
-import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetitionRepository;
-import sumo.desktop_server.Database.Competition.CompetitionRepository;
 import sumo.desktop_server.Database.Competition.CompetitionService;
 import sumo.desktop_server.Database.Competitor.Competitor;
-import sumo.desktop_server.Database.Competitor.CompetitorRepository;
 import sumo.desktop_server.Database.Competitor.CompetitorService;
-import sumo.desktop_server.Database.Registrations.RegistrationRepository;
 import sumo.desktop_server.Database.WeighedCompetitor.WeighedCompetitor;
-import sumo.desktop_server.Database.WeighedCompetitor.WeighedCompetitorRepository;
 import sumo.desktop_server.Database.WeighedCompetitor.WeighedCompetitorService;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @RestController
@@ -50,5 +51,24 @@ public class WeightingController {
         List<Category> categories = competitorService.getCompetitorCategoriesAtSpecifiedCompetition(competitorId, competitionId);
 
         return ResponseEntity.ok().body(categories);
+    }
+
+    @GetMapping("/weightList")
+    public ResponseEntity<List<String>> getWeightList(@RequestParam Long competitionId) {
+        List<Competitor> competitors = competitionService.getAllCompetitors(competitionId);
+        List<String> results = new LinkedList<>();
+        competitors.forEach(competitor -> {
+            List<Category> categories = competitorService.getCompetitorCategoriesAtSpecifiedCompetition(competitor.getId(), competitionId);
+            categories.forEach(category -> {
+                String record = competitor.getPersonalDetails().getName() + ";"
+                    + competitor.getPersonalDetails().getSurname() + ";"
+                    + competitor.getCountry() + ";"
+                    + competitor.getPersonalDetails().getBirthDate().toString() + ";"
+                    + category.getAgeCategory().getName()
+                    + ";" + category.getWeightCategory();
+                results.add(record);
+            });
+        });
+        return ResponseEntity.ok().body(results);
     }
 }

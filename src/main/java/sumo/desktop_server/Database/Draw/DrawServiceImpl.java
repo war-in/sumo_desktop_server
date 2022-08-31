@@ -105,9 +105,10 @@ public class DrawServiceImpl implements DrawService {
         List<JSONObject> dataset = new ArrayList<>();
         draws.forEach(draw -> {
             JSONObject categoryData = new JSONObject();
-            categoryData.appendField("weight", draw.getCategoryAtCompetition().getCategory().getAgeCategory().getName());
+            categoryData.appendField("weight", draw.getCategoryAtCompetition().getCategory().getWeightCategory());
             categoryData.appendField("age", draw.getCategoryAtCompetition().getCategory().getAgeCategory().getName());
             categoryData.appendField("sex", draw.getCategoryAtCompetition().getCategory().getSex().getSex());
+            categoryData.appendField("id", draw.getId());
 
             dataset.add(categoryData);
         });
