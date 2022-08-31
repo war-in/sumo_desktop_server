@@ -207,11 +207,11 @@ INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_
 
 --Great Britain
 --PersonalDetails
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (20, 'Adam', 'Lloyd', null, '2.jpg', '1985-07-26', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (21, 'Sonny', 'Bell', null, '2.jpg', '2002-12-22', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (22, 'Mandeep Singh', 'Kundi', null, '2.jpg', '1981-06-16', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (23, 'Courtney', 'Pflasterer', null, '2.jpg', '1992-08-07', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (24, 'Ryan', 'Wood', null, '2.jpg', '1996-08-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (20, 'Adam', 'Lloyd', null, 'mr. adam lloyd.jpg', '1985-07-26', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (21, 'Sonny', 'Bell', null, 'mr. sonny bell.jpg', '2002-12-22', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (22, 'Mandeep Singh', 'Kundi', null, 'mr. mandeep singh kundi.jpg', '1981-06-16', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (23, 'Courtney', 'Pflasterer', null, 'mr. courtney pflasterer.jpg', '1992-08-07', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (24, 'Ryan', 'Wood', null, 'mr. ryan john  wood.jpg', '1996-08-01', 'male');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (20, 20, 0, 'Great Britain');
@@ -231,12 +231,12 @@ INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competit
 
 --Italy
 --Personal Details
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (30, 'Arianna', 'Vettori', null, '2.jpg', '1999-06-14', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (31, 'Giovanni', 'Sanzone', null, '2.jpg', '2000-06-09', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (32, 'Giovanni', 'Galimberti', null, '2.jpg', '2000-08-30', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (33, 'Giulia', 'Meinardi', null, '2.jpg', '1990-07-19', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (34, 'Maria', 'Bertola', null, '2.jpg', '1985-12-24', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (35, 'Fausto', 'Gobbi', null, '2.jpg', '1972-07-08', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (30, 'Arianna', 'Vettori', null, 'VETTORI Arianna Photo.jpg', '1999-06-14', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (31, 'Giovanni', 'Sanzone', null, 'SANZONE Giovanni Photo.jpg', '2000-06-09', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (32, 'Giovanni', 'Galimberti', null, 'GALIMBERTI Giovanni Photo.jpg', '2000-08-30', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (33, 'Giulia', 'Meinardi', null, 'MEINARDI Giulia Photo.png', '1990-07-19', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (34, 'Maria', 'Bertola', null, 'BERTOLA Maria Photo.jpg', '1985-12-24', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (35, 'Fausto', 'Gobbi', null, 'GOBBI Fausto Emilio Photo.jpg', '1972-07-08', 'male');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (30, 30, 0, 'Italy');
@@ -249,26 +249,25 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 
 --Hungary
 --Personal Details
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (40, 'Roxána', 'Baljer', null, '2.jpg', '2004-12-22', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (41, 'Enikő', 'Elekes', null, '2.jpg', '2004-11-27', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (42, 'Zoltán', 'Mráz', null, '2.jpg', '2004-10-14', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (43, 'Ádám Attila', 'Buzsi', null, '2.jpg', '2002-11-16', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (44, 'Kende', 'Márai', null, '2.jpg', '2003-09-14', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (45, 'Dominik Bendegúz', 'Bereczki', null, '2.jpg', '2004-12-19', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (46, 'Erik Márk', 'Szilágyi', null, '2.jpg', '2001-02-02', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (47, 'Balázs', 'Berregi', null, '2.jpg', '2003-03-17', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (48, 'Péter', 'Zsivnovszky ', null, '2.jpg', '2005-02-06', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (49, 'Marcell', 'Gyuricza', null, '2.jpg', '2005-10-11', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (50, 'Dávid', 'Kotricz', null, '2.jpg', '2002-09-16', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (51, 'Artúr', 'Végh', null, '2.jpg', '2001-08-15', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (52, 'Bertold Boldizsár', 'Barnóczki ', null, '2.jpg', '2004-01-16', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (53, 'Mike', 'Berta', null, '2.jpg', '2000-10-15', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (54, 'Patrik', 'Buzás ', null, '2.jpg', '1999-07-14', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (55, 'Benedek Vajk', 'Laczkó ', null, '2.jpg', '2000-04-27', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (56, 'Marcell', 'Gyuricza ', null, '2.jpg', '2005-10-11', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (57, 'Piroska', 'Rónáné Kalmár ', null, '2.jpg', '1987-06-02', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (58, 'Tamás', 'Molnár', null, '2.jpg', '1998-03-04', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (59, 'Arnold', 'Pap', null, '2.jpg', '1993-03-28', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (40, 'Roxána', 'Baljer', null, 'Baljer_Roxana_Picture.jpg', '2004-12-22', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (41, 'Enikő', 'Elekes', null, 'Elekes Enikő_Photo.jpg', '2004-11-27', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (42, 'Zoltán', 'Mráz', null, 'Mráz Zoltán_Photo.png', '2004-10-14', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (43, 'Ádám Attila', 'Buzsi', null, 'Adam_Buzsi_Photo.jpeg', '2002-11-16', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (44, 'Kende', 'Márai', null, 'Márai Kende_Photo.jpg', '2003-09-14', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (45, 'Dominik Bendegúz', 'Bereczki', null, 'Bereczki Dominik_Photo.jpg', '2004-12-19', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (46, 'Erik Márk', 'Szilágyi', null, 'Szilagyi_Erik_Mark_Photo.jpg', '2001-02-02', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (47, 'Balázs', 'Berregi', null, 'Berregi Balázs Photo.jpg', '2003-03-17', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (48, 'Péter', 'Zsivnovszky ', null, 'Zsivnovszky Péter_Photo.jpg', '2005-02-06', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (49, 'Marcell', 'Gyuricza', null, 'Gyuricza Marcell_Photo.jpg', '2005-10-11', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (50, 'Dávid', 'Kotricz', null, 'blank.jpg', '2002-09-16', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (51, 'Artúr', 'Végh', null, 'Végh_Artúr_Photo.jpg', '2001-08-15', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (52, 'Bertold Boldizsár', 'Barnóczki ', null, 'blank.jpg', '2004-01-16', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (53, 'Mike', 'Berta', null, 'Berta Mike_Photo.jpg', '2000-10-15', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (54, 'Patrik', 'Buzás ', null, 'Buzas_Patrik_Photo.jpg', '1999-07-14', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (55, 'Benedek Vajk', 'Laczkó ', null, 'Lackó Benedek_Photo.jpg', '2000-04-27', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (57, 'Piroska', 'Rónáné Kalmár ', null, 'blank.jpg', '1987-06-02', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (58, 'Tamás', 'Molnár', null, 'Molnár_Tamás_Photo.jpg', '1998-03-04', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (59, 'Arnold', 'Pap', null, 'Pap_Arnold_Photo.jpg', '1993-03-28', 'male');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (40, 40, 0, 'Hungary');
@@ -287,7 +286,6 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (53, 53, 0, 'Hungary');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (54, 54, 0, 'Hungary');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (55, 55, 0, 'Hungary');
-INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (56, 56, 0, 'Hungary');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (57, 57, 0, 'Hungary');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (58, 58, 0, 'Hungary');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (59, 59, 0, 'Hungary');
@@ -296,19 +294,19 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 --Norway
 
 --Personal Details
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (60, 'Othelie Annette', 'Høie', null, '2.jpg', '2002-12-09', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (61, 'Kornelius', 'Haraldsen', null, '2.jpg', '2003-12-17', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (62, 'Ramona', 'Eriksen', null, '2.jpg', '1996-10-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (63, 'Liz Hjelle  ', 'Jenssen', null, '2.jpg', '1978-12-12', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (64, 'Sofie Elisabeth Lizzie', 'Jörgensen', null, '2.jpg', '1988-01-30', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (65, 'Pernille Rojahn', 'Oddlien', null, '2.jpg', '1988-02-02', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (66, 'Erik Enger', 'Bjørgen', null, '2.jpg', '1994-10-15', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (67, 'Steffen', 'Larsen', null, '2.jpg', '1995-03-23', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (68, 'Truls Alfheim', 'Thue', null, '2.jpg', '1997-01-17', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (69, 'Kim Erik Valentin ', 'Svensson', null, '2.jpg', '1992-07-21', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (70, 'Joakim Sandberg ', 'Rusvik', null, '2.jpg', '1993-11-27', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (71, 'Sigmund Røtnes', 'Widerberg', null, '2.jpg', '1991-05-28', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (72, 'Simen Nordlie', 'Kristensen', null, '2.jpg', '1978-05-29', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (60, 'Othelie Annette', 'Høie', null, 'Othelie Høie.jpg', '2002-12-09', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (61, 'Kornelius', 'Haraldsen', null, 'Kornelius Haraldsen.jpg', '2003-12-17', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (62, 'Ramona', 'Eriksen', null, 'Ramona Eriksen.jpg', '1996-10-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (63, 'Liz Hjelle  ', 'Jenssen', null, 'Liz Jenssen.jpg', '1978-12-12', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (64, 'Sofie Elisabeth Lizzie', 'Jörgensen', null, 'Jorgensen, Sofie.jpg', '1988-01-30', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (65, 'Pernille Rojahn', 'Oddlien', null, 'IFS_Picture_Pernille_Oddlien.jpg', '1988-02-02', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (66, 'Erik Enger', 'Bjørgen', null, 'Erik Bjørgen.jpg', '1994-10-15', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (67, 'Steffen', 'Larsen', null, 'Steffen Larsen – Kopi.jpeg', '1995-03-23', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (68, 'Truls Alfheim', 'Thue', null, 'Truls Thue.jpg', '1997-01-17', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (69, 'Kim Erik Valentin ', 'Svensson', null, 'IFS_Picture_KimErik_Svensson.jpg', '1992-07-21', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (70, 'Joakim Sandberg ', 'Rusvik', null, 'Rusvik, Joakim.jpg', '1993-11-27', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (71, 'Sigmund Røtnes', 'Widerberg', null, 'Sigmund Widerberg.jpeg', '1991-05-28', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (72, 'Simen Nordlie', 'Kristensen', null, 'Simen Kristensen.jpg', '1978-05-29', 'male');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (60, 60, 0, 'Norway');
@@ -329,18 +327,18 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 --Germany
 
 --Personal Details
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (80, 'Luca Leoni', 'Kose', null, '2.jpg', '2004-09-07', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (81, 'Emely', 'Raack', null, '2.jpg', '2004-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (82, 'Marie-Luis', 'Zuckschwerdt', null, '2.jpg', '2005-04-27', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (83, 'Fynn', 'Bathe', null, '2.jpg', '2002-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (84, 'Stephanie', 'Steinmetz', null, '2.jpg', '1988-10-19', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (85, 'Daniela', 'Schmidtsdorf', null, '2.jpg', '1976-10-15', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (86, 'Kerstin', 'Schmidtsdorf', null, '2.jpg', '1977-10-16', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (87, 'Johanna', 'Schumann', null, '2.jpg', '1977-10-16', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (88, 'Mohammad', 'Alhasbani', null, '2.jpg', '1977-10-16', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (89, 'Darius', 'Mayek', null, '2.jpg', '1977-10-16', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (90, 'Jörg', 'Frischmann', null, '2.jpg', '1981-08-28', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (91, 'Andreas', 'Hoffmann', null, '2.jpg', '1981-08-28', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (80, 'Luca Leoni', 'Kose', null, 'Picture_GER_Luca_Leoni_Kose.jpg', '2004-09-07', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (81, 'Emely', 'Raack', null, 'blank.jpg', '2004-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (82, 'Marie-Luis', 'Zuckschwerdt', null, 'Picture_GER_Marie-LuisZuckschwerdt_jpg.jpg', '2005-04-27', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (83, 'Fynn', 'Bathe', null, 'blank.jpg', '2002-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (84, 'Stephanie', 'Steinmetz', null, 'blank.jpg', '1988-10-19', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (85, 'Daniela', 'Schmidtsdorf', null, 'blank.jpg', '1976-10-15', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (86, 'Kerstin', 'Schmidtsdorf', null, 'blank.jpg', '1977-10-16', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (87, 'Johanna', 'Schumann', null, 'blank.jpg', '1977-10-16', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (88, 'Mohammad', 'Alhasbani', null, 'blank.jpg', '1977-10-16', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (89, 'Darius', 'Mayek', null, 'blank.jpg', '1977-10-16', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (90, 'Jörg', 'Frischmann', null, 'GER_Picture,Frischmann,J”rg.jpg', '1981-08-28', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (91, 'Andreas', 'Hoffmann', null, 'blank.jpg', '1981-08-28', 'male');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (80, 80, 0, 'Germany');
@@ -361,16 +359,16 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 --GEORGIA
 
 --Personal Details
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (100, 'ANI ', 'MOTSIKULASHVILI', null, '2.jpg', '2002-12-03', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (101, 'NINO ', 'SIMONISHVILI', null, '2.jpg', '2001-08-16', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (102, 'GURAMI ', 'KIBORDZALIDZE', null, '2.jpg', '2003-05-28', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (103, 'AKUBARDIA ', 'SABA', null, '2.jpg', '2003-09-30', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (104, 'SABA ', 'GAMTENADZE', null, '2.jpg', '2002-09-15', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (105, 'ZURA', 'TSIKORADZE', null, '2.jpg', '2001-06-22', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (106, 'ANRI', 'MTCHEDLIDZE', null, '2.jpg', '1999-01-17', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (107, 'BADRI ', 'KHATISKATSI', null, '2.jpg', '1999-01-09', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (108, 'KOBA ', 'MALAKMADZE', null, '2.jpg', '1998-10-27', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (109, 'LASHA  ', 'JELADZE', null, '2.jpg', '1996-12-07', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (100, 'ANI ', 'MOTSIKULASHVILI', null, 'ANA MOTSIKULASHVILI.jpg', '2002-12-03', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (101, 'NINO ', 'SIMONISHVILI', null, 'NINO SIMONISHVILI.jpg', '2001-08-16', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (102, 'GURAMI ', 'KIBORDZALIDZE', null, 'GURAMI KIBORDZALIDZE.jpeg', '2003-05-28', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (103, 'AKUBARDIA ', 'SABA', null, 'SABA AKUBARDIA.jpeg', '2003-09-30', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (104, 'SABA ', 'GAMTENADZE', null, 'SABA GAMTENADZE.jpg', '2002-09-15', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (105, 'ZURA', 'TSIKORADZE', null, 'ZURA TSIKORADZE.jpg', '2001-06-22', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (106, 'ANRI', 'MTCHEDLIDZE', null, 'ANRI MTCHEDLIDZE.jpg', '1999-01-17', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (107, 'BADRI ', 'KHATISKATSI', null, 'BADRI KHATISKATSI.jpg', '1999-01-09', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (108, 'KOBA ', 'MALAKMADZE', null, 'KOBA MALAKMADZE.jpg', '1998-10-27', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (109, 'LASHA  ', 'JELADZE', null, 'LASHA JELADZE.jpg', '1996-12-07', 'male');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (100, 100, 0, 'Georgia');
@@ -388,9 +386,9 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 --Greece
 
 --Personal Details
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (110, 'Georgios', 'Stavropoulos', null, '2.jpg', '1980-07-04', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (111, 'Panagiotis', 'Varelas', null, '2.jpg', '1999-04-15', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (112, 'Marina', 'Papadopoulou', null, '2.jpg', '2005-05-09', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (110, 'Georgios', 'Stavropoulos', null, 'Georgios Stavropoulos.jpg', '1980-07-04', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (111, 'Panagiotis', 'Varelas', null, 'Panagiotis Varelas.jpg', '1999-04-15', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (112, 'Marina', 'Papadopoulou', null, 'Marina Papadopoulou.jpg', '2005-05-09', 'female');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (110, 110, 0, 'Greece');
@@ -401,22 +399,22 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 --Estonia
 
 --Personal Details
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (120, 'NELE', 'NISUMAA', null, '2.jpg', '2001-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (121, 'KÄROLIN', 'TAMMRE', null, '2.jpg', '2005-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (122, 'KAI', 'PÄHKEL', null, '2.jpg', '2001-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (123, 'MARIETTE', 'LIIGEND', null, '2.jpg', '2005-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (124, 'KARLIS', 'BOLLVERK', null, '2.jpg', '2005-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (125, 'ROBYN', 'PAULBERG', null, '2.jpg', '2002-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (126, 'ROMEL', 'SEEMANN', null, '2.jpg', '2003-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (127, 'KENNET', 'KÜNNARPUU', null, '2.jpg', '2003-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (128, 'ALONSO', 'GONZALEZ MARGALEF', null, '2.jpg', '2005-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (129, 'OLAVI', 'REILENT', null, '2.jpg', '2005-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (130, 'XSANDER', 'SOLBAJA', null, '2.jpg', '2002-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (131, 'GREETE', 'KÕNNUSAAR', null, '2.jpg', '1999-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (132, 'IVAN', 'NOVITSKI', null, '2.jpg', '1987-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (133, 'INDREK', 'LÜISTE', null, '2.jpg', '1991-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (134, 'RAIDO', 'LIITMÄE', null, '2.jpg', '1994-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (135, 'GERRITH', 'PUNGAS', null, '2.jpg', '1995-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (120, 'NELE', 'NISUMAA', null, 'Nele Nisumaa.jpg', '2001-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (121, 'KÄROLIN', 'TAMMRE', null, 'K„rolin Tammre.jpeg', '2005-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (122, 'KAI', 'PÄHKEL', null, 'Kai P„hkel.jpeg', '2001-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (123, 'MARIETTE', 'LIIGEND', null, 'Mariette Liigend.jpg', '2005-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (124, 'KARLIS', 'BOLLVERK', null, 'blank.jpg', '2005-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (125, 'ROBYN', 'PAULBERG', null, 'blank.jpg', '2002-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (126, 'ROMEL', 'SEEMANN', null, 'Romel Seemann.jpg', '2003-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (127, 'KENNET', 'KÜNNARPUU', null, 'Kennet Konnarpuu.jpeg', '2003-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (128, 'ALONSO', 'GONZALEZ MARGALEF', null, 'Alonso Gonzalez Margalef.jpg', '2005-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (129, 'OLAVI', 'REILENT', null, 'Olavi Reilet.jpg', '2005-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (130, 'XSANDER', 'SOLBAJA', null, 'Xsander Solbaja.jpg', '2002-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (131, 'GREETE', 'KÕNNUSAAR', null, 'Grete Kõnnusaar.jpg', '1999-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (132, 'IVAN', 'NOVITSKI', null, 'Ivan Novitski (2).jpg', '1987-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (133, 'INDREK', 'LÜISTE', null, 'blank.jpg', '1991-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (134, 'RAIDO', 'LIITMÄE', null, 'blank.jpg', '1994-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (135, 'GERRITH', 'PUNGAS', null, 'Gerrith Pungas.png', '1995-01-01', 'male');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (120, 120, 0, 'Estonia');
@@ -441,16 +439,16 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 --Azerbaijan
 
 --Personal Details
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (140, 'Konul', 'Abdullayeva', null, '2.jpg', '2003-11-22', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (141, 'Nigar', 'Haciramazanova', null, '2.jpg', '2000-08-22', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (142, 'Hasan', 'Aghazada', null, '2.jpg', '2000-11-17', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (143, 'Jamal', 'Feyziyev', null, '2.jpg', '2000-06-17', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (144, 'Khayyam', 'Abdullayev', null, '2.jpg', '1994-05-03', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (145, 'Royal', 'Aghamaliyev', null, '2.jpg', '1998-11-26', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (146, 'Javid', 'Mustafayev', null, '2.jpg', '1997-10-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (147, 'Tunjay', 'Vazirzade', null, '2.jpg', '1997-10-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (148, 'Chingiz', 'Samadov', null, '2.jpg', '1996-05-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (149, 'Sadig', 'Aghamaliyev', null, '2.jpg', '1996-08-28', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (140, 'Konul', 'Abdullayeva', null, '1 (1).jpg', '2003-11-22', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (141, 'Nigar', 'Haciramazanova', null, 'blank.jpg', '2000-08-22', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (142, 'Hasan', 'Aghazada', null, '11 (1).jpg', '2000-11-17', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (143, 'Jamal', 'Feyziyev', null, '9 (1).jpg', '2000-06-17', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (144, 'Khayyam', 'Abdullayev', null, '5.jpg', '1994-05-03', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (145, 'Royal', 'Aghamaliyev', null, '3 (1).jpg', '1998-11-26', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (146, 'Javid', 'Mustafayev', null, '10 (1).jpg', '1997-10-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (147, 'Tunjay', 'Vazirzade', null, 'blank.jpg', '1997-10-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (148, 'Chingiz', 'Samadov', null, 'blank.jpg', '1996-05-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (149, 'Sadig', 'Aghamaliyev', null, '4 (1).jpg', '1996-08-28', 'male');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (140, 140, 0, 'Azerbaijan');
@@ -468,45 +466,45 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 --Ukraine
 
 --Personal Details
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (150, 'Iryna', 'DOROSHENKO', null, '2.jpg', '2002-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (151, 'Sofiia', 'KUSHNIR', null, '2.jpg', '2003-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (152, 'Andriana', 'ANTONIUV', null, '2.jpg', '2001-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (153, 'Kateryna', 'PALII', null, '2.jpg', '2004-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (154, 'Olena', 'NIKITINSKA', null, '2.jpg', '2002-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (155, 'Yuliia', 'TOLMACHOVA', null, '2.jpg', '2004-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (156, 'Iryna', 'HREBENCHUK', null, '2.jpg', '2004-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (157, 'Anna', 'POSHTAR', null, '2.jpg', '2004-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (158, 'Tetiana', 'SOKHA', null, '2.jpg', '2003-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (159, 'Anna', 'FOMITSKA', null, '2.jpg', '2004-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (160, 'Marharyta', 'BIELKOVA', null, '2.jpg', '2004-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (161, 'Yelyzaveta', 'MORENKO', null, '2.jpg', '2002-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (150, 'Iryna', 'DOROSHENKO', null, 'DOROSHENKO Iryna - athlete.jpg', '2002-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (151, 'Sofiia', 'KUSHNIR', null, 'KUSHNIR Sofiia - athlete.jpg', '2003-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (152, 'Andriana', 'ANTONIUV', null, 'ANTONIUV Andriana - athlete.jpeg', '2001-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (153, 'Kateryna', 'PALII', null, 'PALII Kateryna - athlete.jpg', '2004-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (154, 'Olena', 'NIKITINSKA', null, 'NIKITINSKA Olena - athlete.jpg', '2002-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (155, 'Yuliia', 'TOLMACHOVA', null, 'TOLMACHOVA Yuliia - athlete.jpg', '2004-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (156, 'Iryna', 'HREBENCHUK', null, 'HREBENCHUK Iryna - athlete.jpg', '2004-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (157, 'Anna', 'POSHTAR', null, 'POSHTAR Anna - athlete.jpg', '2004-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (158, 'Tetiana', 'SOKHA', null, 'SOKHA Tetiana - athlete.jpg', '2003-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (159, 'Anna', 'FOMITSKA', null, 'FOMITSKA Anna - athlete.jpg', '2004-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (160, 'Marharyta', 'BIELKOVA', null, 'BIELKOVA Marharyta - athlete.jpg', '2004-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (161, 'Yelyzaveta', 'MORENKO', null, 'MORENKO Yelyzaveta - athlete.jpg', '2002-01-01', 'female');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (162, 'Kyrylo', 'KRUPSKYI', null, '2.jpg', '2004-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (163, 'Askold', 'BYSTROV', null, '2.jpg', '2004-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (164, 'Yehor', 'KRUPSKYI', null, '2.jpg', '2002-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (165, 'Tymur', 'SAMEDOV', null, '2.jpg', '2003-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (166, 'Vladyslav', 'MILKOVSKYI', null, '2.jpg', '2002-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (162, 'Kyrylo', 'KRUPSKYI', null, 'KRUPSKYI Kiril - athlete.jpg', '2004-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (163, 'Askold', 'BYSTROV', null, 'BYSTROV Askold - athlete.jpg', '2004-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (164, 'Yehor', 'KRUPSKYI', null, 'KRUPSKYI Yehor - athlete.jpg', '2002-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (165, 'Tymur', 'SAMEDOV', null, 'blank.jpg', '2003-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (166, 'Vladyslav', 'MILKOVSKYI', null, 'MILKOVSKYI Vladyslav - athlete.jpg', '2002-01-01', 'male');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (167, 'Sofiia', 'BORDINSKYKH', null, '2.jpg', '2003-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (168, 'Karyna', 'KOLESNIK', null, '2.jpg', '2000-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (167, 'Sofiia', 'BORDINSKYKH', null, 'BORDINSKYKH Sofiia - athlete.jpg', '2003-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (168, 'Karyna', 'KOLESNIK', null, 'KOLESNIK Karyna - athlete.jpg', '2000-01-01', 'female');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (169, 'Volodymyr', 'BILOVTSOV', null, '2.jpg', '1999-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (170, 'Vazha', 'DAIAURI', null, '2.jpg', '1999-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (169, 'Volodymyr', 'BILOVTSOV', null, 'BILOVTSOV Volodymyr - athlete.jpg', '1999-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (170, 'Vazha', 'DAIAURI', null, 'DAIAURI Vazha - athlete.jpg', '1999-01-01', 'male');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (171, 'Viktoriia', 'SABARDAK', null, '2.jpg', '1995-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (172, 'Anna', 'GAVRYSHCHIUK', null, '2.jpg', '2001-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (173, 'Yelyzaveta', 'PAVLICHENKO', null, '2.jpg', '2003-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (174, 'Alina', 'BONDARIEVA', null, '2.jpg', '1985-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (175, 'Maryna', 'MAKSYMENKO', null, '2.jpg', '1988-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (176, 'Ivanna', 'BEREZOVSKA', null, '2.jpg', '1991-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (177, 'Svitlana', 'YAROMKA', null, '2.jpg', '1989-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (171, 'Viktoriia', 'SABARDAK', null, 'SABARDAK Viktoriia - athlete.jpg', '1995-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (172, 'Anna', 'GAVRYSHCHIUK', null, 'blank.jpg', '2001-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (173, 'Yelyzaveta', 'PAVLICHENKO', null, 'PAVLICHENKO Yelyzaveta - athlete.png', '2003-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (174, 'Alina', 'BONDARIEVA', null, 'BONDARIEVA Alina - athlete.jpg', '1985-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (175, 'Maryna', 'MAKSYMENKO', null, 'MAKSYMENKO Maryna - athlete.jpg', '1988-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (176, 'Ivanna', 'BEREZOVSKA', null, 'BEREZOVSKA Ivanna - athlete.jpg', '1991-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (177, 'Svitlana', 'YAROMKA', null, 'YAROMKA Svitlana - athlete.JPG', '1989-01-01', 'female');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (178, 'Oleksandr', 'KOZYRIEV', null, '2.jpg', '1985-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (179, 'Sviatoslav', 'SEMYKRAS', null, '2.jpg', '1997-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (180, 'Anatolii', 'KHLIUSTIN', null, '2.jpg', '1997-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (181, 'Anton', 'BURLACHENKO', null, '2.jpg', '1993-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (182, 'Oleksandr', 'VERESIUK', null, '2.jpg', '1989-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (183, 'Ivan', 'SOROCHAN', null, '2.jpg', '1992-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (178, 'Oleksandr', 'KOZYRIEV', null, 'KOZYRIEV Oleksandr - athlete.jpg', '1985-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (179, 'Sviatoslav', 'SEMYKRAS', null, 'SEMYKRAS Sviatoslav - athlete.jpg', '1997-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (180, 'Anatolii', 'KHLIUSTIN', null, 'KHLIUSTIN Anatolii - athlete.jpg', '1997-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (181, 'Anton', 'BURLACHENKO', null, 'BURLACHENKO Anton - athlete.jpg', '1993-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (182, 'Oleksandr', 'VERESIUK', null, 'VERESIUK Oleksandr -athlete.jpg', '1989-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (183, 'Ivan', 'SOROCHAN', null, 'SOROCHAN Ivan - athlete.jpg', '1992-01-01', 'male');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (150, 150, 0, 'Ukraine');
@@ -548,26 +546,26 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 --Bulgaria
 
 --Personal Details
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (190, 'Stefani', 'Veselinova', null, '2.jpg', '2003-05-22', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (191, 'Andrea', 'Georgieva', null, '2.jpg', '2003-06-15', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (192, 'Lyudmila', 'Yordanova', null, '2.jpg', '2001-04-25', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (193, 'Mihaela', 'Hristova', null, '2.jpg', '2002-08-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (190, 'Stefani', 'Veselinova', null, 'VESELINOVA,  STEFANI.jpg', '2003-05-22', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (191, 'Andrea', 'Georgieva', null, 'GEORGIEVA, ANDREA.jpg', '2003-06-15', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (192, 'Lyudmila', 'Yordanova', null, 'YORDANOVA,  LYUDMILA.jpg', '2001-04-25', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (193, 'Mihaela', 'Hristova', null, 'HRISTOVA, MIHAELA.jpg', '2002-08-01', 'female');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (194, 'Simeon', 'Penev', null, '2.jpg', '2005-07-12', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (194, 'Simeon', 'Penev', null, 'PENEV,  SIMEON.jpg', '2005-07-12', 'male');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (195, 'Teodora', 'Vasileva', null, '2.jpg', '2000-08-17', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (195, 'Teodora', 'Vasileva', null, 'VASILEVA,  TEODORA.jpg', '2000-08-17', 'female');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (196, 'Gabriela', 'Gigova', null, '2.jpg', '1995-04-29', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (196, 'Gabriela', 'Gigova', null, 'GIGOVA,  GABRIELA.jpg', '1995-04-29', 'female');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (197, 'Ivan', 'Panovski', null, '2.jpg', '1994-09-18', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (198, 'Dimitar', 'Rangelov', null, '2.jpg', '1983-07-30', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (199, 'Atanas', 'Kolev', null, '2.jpg', '1989-07-31', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (200, 'Presiyan', 'Mihov', null, '2.jpg', '1996-09-02', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (201, 'Pencho', 'Dochev', null, '2.jpg', '1990-06-02', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (202, 'Dobromir', 'Dermendzhiev', null, '2.jpg', '1987-06-20', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (203, 'Stilian', 'Ivanov', null, '2.jpg', '1997-08-30', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (204, 'Ivan', 'Blagoev', null, '2.jpg', '1988-12-02', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (205, 'Mihail', 'Iliev', null, '2.jpg', '1989-06-03', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (197, 'Ivan', 'Panovski', null, 'PANOVSKI,  IVAN.jpg', '1994-09-18', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (198, 'Dimitar', 'Rangelov', null, 'RANGELOV,  DIMITAR.jpg', '1983-07-30', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (199, 'Atanas', 'Kolev', null, 'KOLEV, ATANAS.jpg', '1989-07-31', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (200, 'Presiyan', 'Mihov', null, 'MIHOV,  PRESIYAN.jpg', '1996-09-02', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (201, 'Pencho', 'Dochev', null, 'DOCHEV,  PENCHO.jpg', '1990-06-02', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (202, 'Dobromir', 'Dermendzhiev', null, 'DERMENDZHIEV,  DOBROMIR.jpg', '1987-06-20', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (203, 'Stilian', 'Ivanov', null, 'IVANOV,  STILIAN.jpg', '1997-08-30', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (204, 'Ivan', 'Blagoev', null, 'BLAGOEV,  IVAN.jpg', '1988-12-02', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (205, 'Mihail', 'Iliev', null, 'ILIEV,  MIHAIL.jpg', '1989-06-03', 'male');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (190, 190, 0, 'Bulgaria');
@@ -591,70 +589,68 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 --Poland
 
 --Personal Details
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (210, 'Daniel', 'Ziobroń', null, '2.jpg', '2003-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (211, 'Paweł', 'Sikora', null, '2.jpg', '2002-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (212, 'Piotr', 'Sikora', null, '2.jpg', '2002-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (213, 'Jakub', 'Tworek', null, '2.jpg', '2002-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (214, 'Mikołaj', 'Mrowiński', null, '2.jpg', '2003-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (215, 'Dawid', 'Kuraś', null, '2.jpg', '2003-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (216, 'Paweł', 'Puacz', null, '2.jpg', '2002-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (217, 'Adam', 'Fietz', null, '2.jpg', '2004-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (218, 'Sławomir', 'Ochał', null, '2.jpg', '2003-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (219, 'Maciej', 'Nowakowski', null, '2.jpg', '2005-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (220, 'Jakub', 'Siuchta', null, '2.jpg', '2003-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (221, 'Sebastian', 'Warchoł', null, '2.jpg', '2005-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (222, 'Jakub', 'Micek', null, '2.jpg', '2002-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (223, 'Aleksander', 'Gorący', null, '2.jpg', '2004-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (210, 'Daniel', 'Ziobroń', null, 'DANIEL ZIOBROŃ.jpg', '2003-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (211, 'Paweł', 'Sikora', null, 'blank.jpg', '2002-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (212, 'Piotr', 'Sikora', null, 'PIOTR SIKORA.jpg', '2002-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (213, 'Jakub', 'Tworek', null, 'blank.jpg', '2002-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (214, 'Mikołaj', 'Mrowiński', null, 'IFS_Picture_Mrowinski_Mikolaj.jpg', '2003-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (215, 'Dawid', 'Kuraś', null, 'DAWID KURAŚ.jpg', '2003-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (216, 'Paweł', 'Puacz', null, 'PAWEŁ PUACZ.jpg', '2002-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (217, 'Adam', 'Fietz', null, 'blank.jpg', '2004-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (218, 'Sławomir', 'Ochał', null, 'SŁAWOMIR OCHAŁ .jpg', '2003-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (219, 'Maciej', 'Nowakowski', null, 'MACIEJ NOWAKOWSKI.jpg', '2005-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (220, 'Jakub', 'Siuchta', null, 'JAKUB SIUCHTA.jpg', '2003-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (221, 'Sebastian', 'Warchoł', null, 'blank.jpg', '2005-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (222, 'Jakub', 'Micek', null, 'JAKUB MICEK.jpg', '2002-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (223, 'Aleksander', 'Gorący', null, 'blank.jpg', '2004-01-01', 'male');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (224, 'Marta', 'Gruszkiewicz', null, '2.jpg', '2002-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (225, 'Gabriela', 'Warchoł', null, '2.jpg', '2003-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (226, 'Eliza', 'Sobolewska', null, '2.jpg', '2006-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (227, 'Natalia', 'Koszewska', null, '2.jpg', '2003-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (228, 'Agata', 'Kucner', null, '2.jpg', '2005-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (229, 'Wiktoria', 'Żebrowska', null, '2.jpg', '2005-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (230, 'Julia', 'Piwowarska', null, '2.jpg', '2004-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (231, 'Karolina', 'Domaszuk', null, '2.jpg', '2004-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (232, 'Agata', 'Choroszuka', null, '2.jpg', '2001-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (233, 'Oliwia', 'Woźniczka', null, '2.jpg', '2002-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (234, 'Oliwia', 'Glegolska', null, '2.jpg', '2004-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (235, 'Joanna', 'Baranowska', null, '2.jpg', '2003-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (236, 'Zuzanna', 'Krystek', null, '2.jpg', '2003-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (237, 'Weronika', 'Gabryel', null, '2.jpg', '2003-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (224, 'Marta', 'Gruszkiewicz', null, 'MARTA GRUSZKIEWICZ.jpg', '2002-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (225, 'Gabriela', 'Warchoł', null, 'GABRIELA WARCHOŁ.jpg', '2003-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (226, 'Eliza', 'Sobolewska', null, 'blank.jpg', '2006-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (227, 'Natalia', 'Koszewska', null, 'NATALIA KOSZEWSKA.jpg', '2003-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (228, 'Agata', 'Kucner', null, 'AGATA KUCNER.jpg', '2005-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (229, 'Wiktoria', 'Żebrowska', null, 'blank.jpg', '2005-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (230, 'Julia', 'Piwowarska', null, 'JULIA PIWOWARSKA - PO LEWEJ CZARNE DŁUGIE WŁOSY.jpg', '2004-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (231, 'Karolina', 'Domaszuk', null, 'KAROLINA DOMASZUK.jpg', '2004-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (232, 'Agata', 'Choroszuka', null, 'blank.jpg', '2001-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (233, 'Oliwia', 'Woźniczka', null, 'blank.jpg', '2002-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (234, 'Oliwia', 'Glegolska', null, 'OLIWIA GLEGOLSKA.jpg', '2004-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (235, 'Joanna', 'Baranowska', null, 'blank.jpg', '2003-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (236, 'Zuzanna', 'Krystek', null, 'IFS_Picture_Krystek_Zuzanna.jpg', '2003-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (237, 'Weronika', 'Gabryel', null, 'blank.jpg', '2003-01-01', 'female');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (238, 'Hubert', 'Dęborowski', null, '2.jpg', '2000-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (239, 'Kacper', 'Wiatrak', null, '2.jpg', '2002-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (240, 'Łukasz', 'Nawrol', null, '2.jpg', '1999-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (241, 'Rafał', 'Choroszuka', null, '2.jpg', '1999-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (242, 'Damian', 'Wróbel', null, '2.jpg', '2000-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (243, 'Jakub', 'Nowakowski', null, '2.jpg', '2000-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (244, 'Aleksander', 'Gorący', null, '2.jpg', '2004-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (238, 'Hubert', 'Dęborowski', null, 'HUBERT DĘBOROWSKI.jpg', '2000-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (239, 'Kacper', 'Wiatrak', null, 'Kacper Wiatrak.jpg', '2002-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (240, 'Łukasz', 'Nawrol', null, 'blank.jpg', '1999-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (241, 'Rafał', 'Choroszuka', null, 'blank.jpg', '1999-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (242, 'Damian', 'Wróbel', null, 'blank.jpg', '2000-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (243, 'Jakub', 'Nowakowski', null, 'JAKUB NOWAKOWSKI.jpg', '2000-01-01', 'male');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (245, 'Justyna', 'Komza', null, '2.jpg', '2004-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (246, 'Julia', 'Całka', null, '2.jpg', '2000-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (247, 'Paulina', 'Wesół', null, '2.jpg', '2000-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (248, 'Paulina', 'Żemła', null, '2.jpg', '2001-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (249, 'Magdalena', 'Kaźmierczak', null, '2.jpg', '2000-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (250, 'Paulina', 'Zarychta', null, '2.jpg', '2002-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (251, 'Marta', 'Gruszkiewicz', null, '2.jpg', '2002-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (245, 'Justyna', 'Komza', null, 'JUSTYNA KOMZA.jpg', '2004-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (246, 'Julia', 'Całka', null, 'JULIA CAŁKA.jpg', '2000-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (247, 'Paulina', 'Wesół', null, 'PAULINA WESÓŁ.JPG', '2000-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (248, 'Paulina', 'Żemła', null, 'PAULINA ŻEMŁA.jpg', '2001-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (249, 'Magdalena', 'Kaźmierczak', null, 'blank.jpg', '2000-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (250, 'Paulina', 'Zarychta', null, 'PAULINA ZARYCHTA .jpg', '2002-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (251, 'Marta', 'Gruszkiewicz', null, 'MARTA GRUSZKIEWICZ.jpg', '2002-01-01', 'female');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (252, 'Paweł', 'Pieprzak', null, '2.jpg', '1988-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (253, 'Mateusz', 'Konieczny', null, '2.jpg', '1991-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (254, 'Patryk', 'Swora', null, '2.jpg', '1993-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (255, 'Michał', 'Luto', null, '2.jpg', '1991-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (256, 'Rafał', 'Głodek', null, '2.jpg', '1996-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (257, 'Aron', 'Rozum', null, '2.jpg', '1990-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (258, 'Jacek', 'Piersiak', null, '2.jpg', '1988-01-01', 'male');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (259, 'Mateusz', 'Linka', null, '2.jpg', '2004-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (252, 'Paweł', 'Pieprzak', null, 'PAWEŁ PIEPRZAK.jpg', '1988-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (253, 'Mateusz', 'Konieczny', null, 'MATEUSZ KONIECZNY.jpg', '1991-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (254, 'Patryk', 'Swora', null, 'SWORA PATRYK.jpg', '1993-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (255, 'Michał', 'Luto', null, 'IFS_Picture_Luto-Michał.jpg', '1991-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (256, 'Rafał', 'Głodek', null, 'RAFAŁ GŁODEK.jpg', '1996-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (257, 'Aron', 'Rozum', null, 'IFS_Picture_Rozum_Aron.jpg', '1990-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (258, 'Jacek', 'Piersiak', null, 'IFS_Picture_Piersiak_Jacek.jpg', '1988-01-01', 'male');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (259, 'Mateusz', 'Linka', null, 'IFS_PHOTO_LINKA_MATEUSZ.jpg', '2004-01-01', 'male');
 
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (260, 'Klaudia', 'Pieprzak', null, '2.jpg', '1998-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (261, 'Karolina', 'Marczak', null, '2.jpg', '2001-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (262, 'Paulina', 'Wesół', null, '2.jpg', '2000-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (263, 'Aleksandra', 'Rozum', null, '2.jpg', '1998-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (264, 'Monika', 'Skiba', null, '2.jpg', '1988-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (265, 'Lena', 'Andrzejak', null, '2.jpg', '2003-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (266, 'Aleksandra', 'Grygel', null, '2.jpg', '1992-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (267, 'Magda', 'Skrajnowska', null, '2.jpg', '1998-01-01', 'female');
-INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (268, 'Wioleta', 'Kielar', null, '2.jpg', '1988-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (260, 'Klaudia', 'Pieprzak', null, 'KLAUDIA PIEPRZAK.jpg', '1998-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (261, 'Karolina', 'Marczak', null, 'KAROLINA MARCZAK.jpg', '2001-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (263, 'Aleksandra', 'Rozum', null, 'IFS_Picture_Rozum_Aleksandra.jpg', '1998-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (264, 'Monika', 'Skiba', null, 'IFS_Picture_Skiba_Monika.jpg', '1988-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (265, 'Lena', 'Andrzejak', null, 'blank.jpg', '2003-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (266, 'Aleksandra', 'Grygel', null, 'blank.jpg', '1992-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (267, 'Magda', 'Skrajnowska', null, 'blank.jpg', '1998-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (268, 'Wioleta', 'Kielar', null, 'WIOLETA KIELAR.jpg', '1988-01-01', 'female');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (210, 210, 0, 'Poland');
@@ -691,7 +687,6 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (241, 241, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (242, 242, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (243, 243, 0, 'Poland');
-INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (244, 244, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (245, 245, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (246, 246, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (247, 247, 0, 'Poland');
@@ -709,7 +704,6 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (259, 259, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (260, 260, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (261, 261, 0, 'Poland');
-INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (262, 262, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (263, 263, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (264, 264, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (265, 265, 0, 'Poland');
