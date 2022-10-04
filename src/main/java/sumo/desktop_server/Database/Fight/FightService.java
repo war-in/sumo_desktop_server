@@ -7,4 +7,5 @@ import java.util.List;
 public interface FightService {
     Fight saveFight(Fight fightToSave);
     List<Fight> getAllFights();
+    List<Fight> getFightsByDrawId(Long drawId);
 }

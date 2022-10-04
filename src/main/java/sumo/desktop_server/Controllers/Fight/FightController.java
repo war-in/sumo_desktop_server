@@ -12,15 +12,22 @@ import java.util.List;
 @RequestMapping("/fights")
 @RequiredArgsConstructor
 public class FightController {
-    final FightService fightService;
+    private final FightService fightService;
 
     @PostMapping("/save")
     public ResponseEntity<Fight> saveFight(@RequestBody Fight fightToSave) {
         Fight fight = fightService.saveFight(fightToSave);
         return ResponseEntity.ok().body(fight);
     }
+
     @GetMapping()
     public ResponseEntity<List<Fight>> getFights() {
         return ResponseEntity.ok().body(fightService.getAllFights());
+    }
+
+    @GetMapping()
+    public ResponseEntity<List<Fight>> getFightsByDrawId(@RequestParam Long drawId) {
+        List<Fight> fights = fightService.getFightsByDrawId(drawId);
+        return ResponseEntity.ok().body(fights);
     }
 }
