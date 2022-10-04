@@ -22,6 +22,9 @@ public class DrawTypeServiceImpl implements DrawTypeService {
         Region region = regionRepository.findRegionByRegion(regionName);
         List<DrawType> allDrawTypes = drawTypeRepository.findDrawTypesByRegion(region);
 
-        return allDrawTypes.stream().filter(drawType -> drawType.getNumberOfCompetitors() >= numberOfCompetitors).toList();
+        return allDrawTypes.stream()
+                .filter(drawType -> drawType.getNumberOfCompetitors() >= numberOfCompetitors
+                        || drawType.getNumberOfCompetitors() == 0).
+                toList();
     }
 }

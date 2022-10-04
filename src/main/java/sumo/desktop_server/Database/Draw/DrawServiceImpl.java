@@ -1,13 +1,15 @@
 package sumo.desktop_server.Database.Draw;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import net.minidev.json.JSONObject;
 import org.springframework.stereotype.Service;
 import sumo.desktop_server.Controllers.Utils.Draw.CompetitorsAndDrawType;
 import sumo.desktop_server.Controllers.Utils.Draw.DataToSaveDraw;
 import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetition;
 import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetitionRepository;
+import sumo.desktop_server.Database.Competition.Competition;
 import sumo.desktop_server.Database.Competitor.Competitor;
+import sumo.desktop_server.Database.Competitor.CompetitorRepository;
 import sumo.desktop_server.Database.CompetitorInDraw.CompetitorInDraw;
 import sumo.desktop_server.Database.CompetitorInDraw.CompetitorInDrawRepository;
 import sumo.desktop_server.Database.DrawType.DrawType;
@@ -26,9 +28,10 @@ public class DrawServiceImpl implements DrawService {
     private final CategoryAtCompetitionRepository categoryAtCompetitionRepository;
     private final DrawRepository drawRepository;
     private final CompetitorInDrawRepository competitorInDrawRepository;
+    private final CompetitorRepository competitorRepository;
 
     @Override
-    public List<?> prepareDraw(CompetitorsAndDrawType competitorsAndDrawType) {
+    public List<Competitor> prepareDraw(CompetitorsAndDrawType competitorsAndDrawType) {
         DrawType drawType = drawTypeRepository.findDrawTypeById(competitorsAndDrawType.getDrawType().getId());
         List<Competitor> competitors = competitorsAndDrawType.getCompetitors();
         int numOfCompetitorsWithoutGroups = competitors.size();
@@ -36,42 +39,85 @@ public class DrawServiceImpl implements DrawService {
         if (drawType.getNumberOfCompetitors() <= 5) {
             Collections.shuffle(competitors);
 
-            return List.of(competitors);
+            return competitors;
         }
 
-        if (drawType.getNumberOfCompetitors() <= 10) {
-            return splitRunnerUpAndMaster(competitors);
+        if (drawType.getNumberOfCompetitors() == 10) {
+            return splitRunnerUpAndMaster(competitors).stream().flatMap(List::stream).toList();
         }
         else {
             int numOfFreeFights = drawType.getNumberOfCompetitors() - numOfCompetitorsWithoutGroups;
 
             while (numOfFreeFights > 0) {
-                competitors.add(new Competitor(null, null, null, "FreeFight"));
+                competitors.add(competitorRepository.findCompetitorById(0L));
                 numOfFreeFights--;
             }
 
             List<List<Competitor>> groups = splitRunnerUpAndMaster(competitors);
 
-            return List.of(createGroups(groups.get(0)), createGroups(groups.get(1)));
+            return flattenNestedLists(List.of(createGroups(groups.get(0)), createGroups(groups.get(1))));
         }
     }
 
     @Override
     public Draw saveDraw(DataToSaveDraw dataToSaveDraw) {
         DrawType drawType = drawTypeRepository.findDrawTypeById(dataToSaveDraw.getDrawType().getId());
-        CategoryAtCompetition categoryAtCompetition = categoryAtCompetitionRepository.findCategoryAtCompetitionById(dataToSaveDraw.getCategoryAtCompetition().getId());
+        CategoryAtCompetition categoryAtCompetition =
+            categoryAtCompetitionRepository.findCategoryAtCompetitionById(
+                dataToSaveDraw.getCategoryAtCompetitionId());
 
-        Draw draw = drawRepository.save(new Draw(0, categoryAtCompetition, drawType));
+        Draw drawFromDatabase = drawRepository.findDrawById(categoryAtCompetition.getId());
+        if (drawFromDatabase == null)
+            drawFromDatabase = new Draw(categoryAtCompetition.getId(), categoryAtCompetition, drawType);
+
+        Draw draw = drawRepository.save(drawFromDatabase);
 
         List<Competitor> competitors = dataToSaveDraw.getCompetitors();
 
-        int index = 0;
-        competitors.forEach(competitor -> {
-            CompetitorInDraw competitorInDraw = new CompetitorInDraw(0, draw, competitor, index);
+        for (int i=0; i<competitors.size(); i++) {
+            CompetitorInDraw competitorInDraw = new CompetitorInDraw();
+            competitorInDraw.setDraw(draw);
+            competitorInDraw.setCompetitor(competitors.get(i));
+            competitorInDraw.setNumberOfPlaceInDraw(i);
+
             competitorInDrawRepository.save(competitorInDraw);
-        });
+        }
 
         return draw;
+    }
+
+    @Override
+    public List<Competitor> getCompetitorsInDraw(Long drawId) {
+        Draw draw = drawRepository.findDrawById(drawId);
+        System.out.println(draw);
+        List<CompetitorInDraw> competitorInDraw = competitorInDrawRepository.findAllByDraw(draw);
+
+        return competitorInDraw.stream()
+                .sorted(Comparator.comparing(CompetitorInDraw::getNumberOfPlaceInDraw))
+                .map(CompetitorInDraw::getCompetitor).toList();
+    }
+
+    @Override
+    public JSONObject getDrawsDetailsByCompetition(Competition competition) {
+        List<Draw> allDraws = drawRepository.findAllBy();
+        List<Draw> draws = allDraws.stream().filter(draw -> draw.getCategoryAtCompetition().getCompetition() == competition).toList();
+
+        List<JSONObject> dataset = new ArrayList<>();
+        draws.forEach(draw -> {
+            JSONObject categoryData = new JSONObject();
+            categoryData.appendField("weight", draw.getCategoryAtCompetition().getCategory().getWeightCategory());
+            categoryData.appendField("age", draw.getCategoryAtCompetition().getCategory().getAgeCategory().getName());
+            categoryData.appendField("sex", draw.getCategoryAtCompetition().getCategory().getSex().getSex());
+            categoryData.appendField("id", draw.getId());
+
+            dataset.add(categoryData);
+        });
+
+        JSONObject result = new JSONObject();
+        result.appendField("dataset", dataset);
+        result.appendField("draws", draws);
+
+        return result;
     }
 
     private List<List<Competitor>> splitRunnerUpAndMaster(List<Competitor> competitors) {
@@ -136,5 +182,14 @@ public class DrawServiceImpl implements DrawService {
         Collections.shuffle(groups);
 
         return groups;
+    }
+
+    private List<Competitor> flattenNestedLists(List<List<?>> nestedList) {
+        List<?> flattenedList = nestedList.stream().flatMap(List::stream).toList();
+
+        if(flattenedList.get(0) instanceof List)
+            return this.flattenNestedLists((List<List<?>>) flattenedList);
+
+        return (List<Competitor>) flattenedList;
     }
 }

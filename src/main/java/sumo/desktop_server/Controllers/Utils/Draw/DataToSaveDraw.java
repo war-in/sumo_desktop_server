@@ -11,5 +11,5 @@ import java.util.List;
 public class DataToSaveDraw {
     private List<Competitor> competitors;
     private DrawType drawType;
-    private CategoryAtCompetition categoryAtCompetition;
+    private long categoryAtCompetitionId;
 }
