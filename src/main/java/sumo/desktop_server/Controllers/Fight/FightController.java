@@ -25,7 +25,7 @@ public class FightController {
         return ResponseEntity.ok().body(fightService.getAllFights());
     }
 
-    @GetMapping()
+    @GetMapping("/by-draw")
     public ResponseEntity<List<Fight>> getFightsByDrawId(@RequestParam Long drawId) {
         List<Fight> fights = fightService.getFightsByDrawId(drawId);
         return ResponseEntity.ok().body(fights);
