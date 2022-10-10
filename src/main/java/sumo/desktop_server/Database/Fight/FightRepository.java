@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface FightRepository extends JpaRepository<Fight,Long> {
     List<Fight> findFightsByDraw(Draw draw);
+    Fight findFightByDrawAndNumberOfPlaceInDraw(Draw draw, int numberOfPlaceInDraw);
 }

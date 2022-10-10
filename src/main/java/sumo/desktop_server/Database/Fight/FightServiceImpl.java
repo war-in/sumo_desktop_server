@@ -20,15 +20,21 @@ public class FightServiceImpl implements FightService {
 
     @Override
     public Fight saveFight(Fight fightToSave) {
-        Competitor firstCompetitor = competitorRepository.findCompetitorById(fightToSave.getFirstCompetitor().getId());
-        Competitor secondCompetitor = competitorRepository.findCompetitorById(fightToSave.getSecondCompetitor().getId());
         Draw draw = drawRepository.findDrawById(fightToSave.getDraw().getId());
+        Fight fightFromDatabase = fightRepository.findFightByDrawAndNumberOfPlaceInDraw(draw, fightToSave.getNumberOfPlaceInDraw());
 
-        fightToSave.setFirstCompetitor(firstCompetitor);
-        fightToSave.setSecondCompetitor(secondCompetitor);
-        fightToSave.setDraw(draw);
+        if(fightFromDatabase == null) {
+            Competitor firstCompetitor = competitorRepository.findCompetitorById(fightToSave.getFirstCompetitor().getId());
+            Competitor secondCompetitor = competitorRepository.findCompetitorById(fightToSave.getSecondCompetitor().getId());
 
-        return fightRepository.save(fightToSave);
+            fightToSave.setFirstCompetitor(firstCompetitor);
+            fightToSave.setSecondCompetitor(secondCompetitor);
+            fightToSave.setDraw(draw);
+            return fightRepository.save(fightToSave);
+        }
+        fightFromDatabase.setWinner(fightToSave.isWinner());
+
+        return fightRepository.save(fightFromDatabase);
     }
 
     @Override
