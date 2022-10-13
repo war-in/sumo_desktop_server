@@ -1,6 +1,8 @@
 package sumo.desktop_server.Database.WeighedCompetitor;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import sumo.desktop_server.Database.Registrations.Registration;
 
@@ -11,6 +13,8 @@ import java.time.LocalDate;
 @Table(name = "WEIGHED_COMPETITORS")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class WeighedCompetitor {
 
     @Id

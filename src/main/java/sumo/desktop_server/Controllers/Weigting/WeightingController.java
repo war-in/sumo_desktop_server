@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import sumo.desktop_server.Controllers.Utils.Weighting.WeightingDetails;
 import sumo.desktop_server.Database.Category.Category;
 import sumo.desktop_server.Database.Competition.CompetitionService;
 import sumo.desktop_server.Database.Competitor.Competitor;
@@ -34,9 +35,15 @@ public class WeightingController {
         return ResponseEntity.ok().body(weighedCompetitor);
     }
 
-    @PostMapping("/update-weighing-details")
-    public ResponseEntity<WeighedCompetitor> updateWeighingDetails(@RequestBody WeighedCompetitor weighedCompetitor) {
-        return ResponseEntity.ok().body(weighedCompetitorService.setWeighingDetails(weighedCompetitor));
+    @PostMapping("/update-weighting-details")
+    public ResponseEntity<WeighedCompetitor> updateWeighingDetails(@RequestBody WeightingDetails weightingDetails) {
+        return ResponseEntity.ok().body(
+            weighedCompetitorService.setWeighingDetails(
+                weightingDetails.getCategoryAtCompetitionId(),
+                weightingDetails.getCompetitorId(),
+                weightingDetails.getWeight()
+            )
+        );
     }
 
     @GetMapping("/competitors")

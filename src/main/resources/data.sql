@@ -52,18 +52,6 @@ INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competit
 INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (10, 2, 10);
 INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (11, 2, 11);
 
-INSERT into WEIGHED_COMPETITORS (weighed_competitor_id, registration_id, weight, date) values (1, 1, 67.0, '2022-07-19');
-INSERT into WEIGHED_COMPETITORS (weighed_competitor_id, registration_id, weight, date) values (2, 2, 55.0, '2022-07-19');
-INSERT into WEIGHED_COMPETITORS (weighed_competitor_id, registration_id, weight, date) values (3, 3, 55.0, '2022-07-19');
-INSERT into WEIGHED_COMPETITORS (weighed_competitor_id, registration_id, weight, date) values (4, 4, 59.0, '2022-07-19');
-INSERT into WEIGHED_COMPETITORS (weighed_competitor_id, registration_id, weight, date) values (5, 5, 54.0, '2022-07-19');
-INSERT into WEIGHED_COMPETITORS (weighed_competitor_id, registration_id, weight, date) values (6, 6, 52.0, '2022-07-19');
-INSERT into WEIGHED_COMPETITORS (weighed_competitor_id, registration_id, weight, date) values (7, 7, 55.0, '2022-07-19');
-INSERT into WEIGHED_COMPETITORS (weighed_competitor_id, registration_id, weight, date) values (8, 8, 58.0, '2022-07-19');
-INSERT into WEIGHED_COMPETITORS (weighed_competitor_id, registration_id, weight, date) values (9, 9, 55.0, '2022-07-19');
-INSERT into WEIGHED_COMPETITORS (weighed_competitor_id, registration_id, weight, date) values (10, 10, 55.0, '2022-07-19');
-INSERT into WEIGHED_COMPETITORS (weighed_competitor_id, registration_id, weight, date) values (11, 11, 55.0, '2022-07-19');
-
 INSERT into REGIONS (region) values ( 'EUROPE' );
 
 INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (1, 16, 'EUROPE');

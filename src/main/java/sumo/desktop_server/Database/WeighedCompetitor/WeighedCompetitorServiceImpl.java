@@ -1,14 +1,12 @@
 package sumo.desktop_server.Database.WeighedCompetitor;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetition;
 import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetitionRepository;
-import sumo.desktop_server.Database.Competitor.Competitor;
 import sumo.desktop_server.Database.Competitor.CompetitorRepository;
 import sumo.desktop_server.Database.Registrations.Registration;
 import sumo.desktop_server.Database.Registrations.RegistrationRepository;
+import sumo.desktop_server.Database.Registrations.RegistrationService;
 
 import javax.transaction.Transactional;
 import java.time.LocalDate;
@@ -18,26 +16,42 @@ import java.time.LocalDate;
 @Transactional
 public class WeighedCompetitorServiceImpl implements WeighedCompetitorService{
 
-    private final RegistrationRepository registrationRepository;
     private final WeighedCompetitorRepository weighedCompetitorRepository;
-    private final CategoryAtCompetitionRepository categoryAtCompetitionRepository;
-    private final CompetitorRepository competitorRepository;
+    private final RegistrationService registrationService;
 
     @Override
     public WeighedCompetitor getCompetitorsWeighingDetailsAtSpecifiedCategory(Long categoryAtCompetitionId, Long competitorId) {
-        CategoryAtCompetition category = categoryAtCompetitionRepository.findCategoryAtCompetitionById(categoryAtCompetitionId);
-        Competitor competitor = competitorRepository.findCompetitorById(competitorId);
+        Registration registration = registrationService
+                .getRegistrationByCategoryAtCompetitionIdAndCompetitorId(categoryAtCompetitionId, competitorId);
 
-        Registration registration = registrationRepository.findRegistrationByCategoryAtCompetitionAndCompetitor(category, competitor);
+        WeighedCompetitor weighedCompetitor = weighedCompetitorRepository
+                .findWeighedCompetitorByRegistrationId(registration.getId());
 
-        return weighedCompetitorRepository.findWeighedCompetitorByRegistrationId(registration.getId());
+        if (weighedCompetitor == null) {
+            weighedCompetitor = new WeighedCompetitor();
+            weighedCompetitor.setRegistration(registration);
+
+            return weighedCompetitorRepository.save(weighedCompetitor);
+        }
+
+        return weighedCompetitor;
     }
 
     @Override
-    public WeighedCompetitor setWeighingDetails(WeighedCompetitor weighedCompetitor) {
+    public WeighedCompetitor setWeighingDetails(Long categoryAtCompetitionId, Long competitorId, Float weight) {
+        WeighedCompetitor weighedCompetitor = this.getByCategoryAtCompetitionIdAndCompetitorId(categoryAtCompetitionId, competitorId);
         LocalDate date = LocalDate.now();
+
+        weighedCompetitor.setWeight(weight);
         weighedCompetitor.setDate(date);
 
         return weighedCompetitorRepository.save(weighedCompetitor);
+    }
+
+    private WeighedCompetitor getByCategoryAtCompetitionIdAndCompetitorId(Long categoryAtCompetitionId, Long competitorId) {
+        Registration registration = registrationService
+                .getRegistrationByCategoryAtCompetitionIdAndCompetitorId(categoryAtCompetitionId, competitorId);
+
+        return weighedCompetitorRepository.findWeighedCompetitorByRegistrationId(registration.getId());
     }
 }
