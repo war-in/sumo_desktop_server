@@ -8,6 +8,7 @@ import sumo.desktop_server.Database.Draw.Draw;
 import sumo.desktop_server.Database.Draw.DrawRepository;
 
 import javax.transaction.Transactional;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -23,18 +24,17 @@ public class FightServiceImpl implements FightService {
         Draw draw = drawRepository.findDrawById(fightToSave.getDraw().getId());
         Fight fightFromDatabase = fightRepository.findFightByDrawAndNumberOfPlaceInDraw(draw, fightToSave.getNumberOfPlaceInDraw());
 
-        if(fightFromDatabase == null) {
-            Competitor firstCompetitor = competitorRepository.findCompetitorById(fightToSave.getFirstCompetitor().getId());
-            Competitor secondCompetitor = competitorRepository.findCompetitorById(fightToSave.getSecondCompetitor().getId());
+        Competitor firstCompetitor = competitorRepository.findCompetitorById(fightToSave.getFirstCompetitor().getId());
+        Competitor secondCompetitor = competitorRepository.findCompetitorById(fightToSave.getSecondCompetitor().getId());
 
-            fightToSave.setFirstCompetitor(firstCompetitor);
-            fightToSave.setSecondCompetitor(secondCompetitor);
-            fightToSave.setDraw(draw);
-            return fightRepository.save(fightToSave);
-        }
-        fightFromDatabase.setWinner(fightToSave.isWinner());
+        fightToSave.setFirstCompetitor(firstCompetitor);
+        fightToSave.setSecondCompetitor(secondCompetitor);
+        fightToSave.setDraw(draw);
 
-        return fightRepository.save(fightFromDatabase);
+        if (fightFromDatabase != null)
+            fightToSave.setId(fightFromDatabase.getId());
+
+        return fightRepository.save(fightToSave);
     }
 
     @Override
@@ -45,6 +45,10 @@ public class FightServiceImpl implements FightService {
     @Override
     public List<Fight> getFightsByDrawId(Long drawId) {
         Draw draw = drawRepository.findDrawById(drawId);
-        return fightRepository.findFightsByDraw(draw);
+        List<Fight> fights = fightRepository.findFightsByDraw(draw);
+
+        return fights.stream()
+                .sorted(Comparator.comparing(Fight::getNumberOfPlaceInDraw))
+                .toList();
     }
 }
