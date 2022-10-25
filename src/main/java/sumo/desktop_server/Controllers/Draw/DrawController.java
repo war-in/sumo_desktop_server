@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sumo.desktop_server.Controllers.Utils.Draw.CategoryAndCompetitors;
 import sumo.desktop_server.Controllers.Utils.Draw.CompetitorsAndDrawType;
+import sumo.desktop_server.Controllers.Utils.Draw.CompetitorsAndFightsInDraw;
 import sumo.desktop_server.Controllers.Utils.Draw.DataToSaveDraw;
 import sumo.desktop_server.Database.Competition.CompetitionService;
 import sumo.desktop_server.Database.Competitor.Competitor;
@@ -12,6 +13,8 @@ import sumo.desktop_server.Database.Draw.Draw;
 import sumo.desktop_server.Database.Draw.DrawService;
 import sumo.desktop_server.Database.DrawType.DrawType;
 import sumo.desktop_server.Database.DrawType.DrawTypeService;
+import sumo.desktop_server.Database.Fight.Fight;
+import sumo.desktop_server.Database.Fight.FightService;
 
 import java.util.*;
 
@@ -23,6 +26,7 @@ public class DrawController {
     private final CompetitionService competitionService;
     private final DrawTypeService drawTypeService;
     private final DrawService drawService;
+    private final FightService fightService;
 
     @GetMapping("/categories-with-competitors")
     public ResponseEntity<List<CategoryAndCompetitors>> getCategoriesWithCompetitors(@RequestParam Long competitionId) {
@@ -56,5 +60,13 @@ public class DrawController {
     public ResponseEntity<List<Competitor>> getReadyDraw(@RequestParam Long drawId) {
         List<Competitor> competitors = drawService.getCompetitorsInDraw(drawId);
         return ResponseEntity.ok().body(competitors);
+    }
+
+    @GetMapping("/with-fights")
+    public ResponseEntity<CompetitorsAndFightsInDraw> getDrawWithGeneratedFights(@RequestParam Long drawId) {
+        List<Competitor> competitors = drawService.getCompetitorsInDraw(drawId);
+        List<Fight> fights = fightService.getFightsByDrawId(drawId);
+
+        return ResponseEntity.ok().body(new CompetitorsAndFightsInDraw(competitors, fights));
     }
 }

@@ -31,7 +31,11 @@ public class Fight {
     private Competitor secondCompetitor;
 
     @Column(name = "WINNER")
-    private boolean winner;
+    // can be:
+    // 0 - nobody
+    // 1 - first
+    // 2 -second
+    private int whoIsWinner;
 
     @Column(name = "NUMBER_OF_PLACE_IN_DRAW")
     private int numberOfPlaceInDraw;

@@ -23,7 +23,5 @@ public class TournamentController {
     public ResponseEntity<JSONObject> getMenuData(@RequestParam Long competitionId) {
         Competition competition = competitionRepository.findCompetitionById(competitionId);
         return ResponseEntity.ok().body(drawService.getDrawsDetailsByCompetition(competition));
-
-
     }
 }
