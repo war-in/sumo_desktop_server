@@ -25,11 +25,11 @@ public class SumoWebServerConnector {
     private final WebClient webClient;
     private final SecurityTokenService securityTokenService;
 
-    @Value("sumoWebServiceLink")
+    @Value("${sumoWebService.Link}")
     private String SUMO_SERVER_LINK;
-    @Value("sumoWebService.GetTokenEndpoint")
+    @Value("${sumoWebService.GetTokenEndpoint}")
     private String LOGIN_ENDPOINT;
-    @Value("sumoWebService.RefreshTokenLink")
+    @Value("${sumoWebService.RefreshTokenLink}")
     private String REFRESH_TOKEN_ENDPOINT;
 
 
@@ -58,7 +58,7 @@ public class SumoWebServerConnector {
             .retrieve()
             .toEntity(SecurityTokens.class)
             .block();
-        System.out.println(result);
+       securityTokenService.saveSecurityTokens(result.getBody());
     }
 
     private WebClient.RequestHeadersSpec<?> prepareRequestToSend(RequestEntity<?> request, HttpMethod method) {
