@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "sumoWebService.Link",
+      "type": "java.lang.String",
+      "description": "Link to server with data"
+    },
+    {
+      "name": "sumoWebService.GetTokenEndpoint",
+      "type": "java.lang.String",
+      "description": "Name of endpoint where we can get tokens"
+    },
+    {
+      "name": "sumoWebService.RefreshTokenLink",
+      "type": "java.lang.String",
+      "description": "Name of endpoint where we can refresh tokens"
+    }
+  ]
+}

@@ -1,7 +1,6 @@
 package sumo.desktop_server.Vendors.SumoWebServer.Conectivity;
 
 import sumo.desktop_server.Vendors.SumoWebServer.Schema.Security.SumoServerTokensRequest;
-import sumo.desktop_server.Vendors.SumoWebServer.Schema.SumoWebServerRequest;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;

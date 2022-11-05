@@ -1,5 +1,6 @@
 package sumo.desktop_server.Database.SeciurityTokens;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,11 +22,10 @@ public class SecurityTokens {
     private long id;
 
     @Column(name = "ACCESS_TOKEN")
+    @JsonProperty("access_token")
     private String accessToken;
 
     @Column(name="REFRESH_TOKEN")
+    @JsonProperty("refresh_token")
     private String refreshToken;
-
-    @Column(name="EXPIRATION")
-    private String expiration;
 }
