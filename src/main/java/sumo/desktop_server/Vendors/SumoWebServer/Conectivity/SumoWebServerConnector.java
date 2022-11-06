@@ -46,7 +46,7 @@ public class SumoWebServerConnector {
         return result.getBody();
     }
 
-    public void getTokens(String login, String password) {
+    public Boolean getTokens(String login, String password) {
         MultiValueMap<String, String> formData = new LinkedMultiValueMap<>();
         formData.add("username", login);
         formData.add("password", password);
@@ -58,7 +58,10 @@ public class SumoWebServerConnector {
             .retrieve()
             .toEntity(SecurityTokens.class)
             .block();
-       securityTokenService.saveSecurityTokens(result.getBody());
+        securityTokenService.saveSecurityTokens(result.getBody());
+        return result.getBody() != null &&
+            result.getBody().getRefreshToken() != null &&
+            result.getBody().getAccessToken() != null;
     }
 
     private WebClient.RequestHeadersSpec<?> prepareRequestToSend(RequestEntity<?> request, HttpMethod method) {
