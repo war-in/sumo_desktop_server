@@ -12,7 +12,6 @@ import sumo.desktop_server.Database.Fight.Fight;
 import sumo.desktop_server.Database.Fight.FightService;
 import sumo.desktop_server.Database.SeciurityTokens.SecurityTokens;
 import sumo.desktop_server.Vendors.SumoWebServer.Conectivity.SumoWebServerConnector;
-import sumo.desktop_server.Vendors.SumoWebServer.Schema.Security.SumoServerCredentials;
 
 import java.util.List;
 
@@ -22,8 +21,8 @@ import java.util.List;
 public class LoginController {
     private final SumoWebServerConnector sumoWebServerConnector;
     @GetMapping
-    public ResponseEntity<Boolean> login(@RequestBody SumoServerCredentials sumoServerCredentials){
-        Boolean result = sumoWebServerConnector.getTokens(sumoServerCredentials.getUsername(),sumoServerCredentials.getPassword());
+    public ResponseEntity<Boolean> login(@RequestParam String username, @RequestParam String password){
+        Boolean result = sumoWebServerConnector.getTokens(username,password);
         return ResponseEntity.ok().body(result);
     }
 
