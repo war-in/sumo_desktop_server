@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface CompetitorService {
     List<Category> getCompetitorCategoriesAtSpecifiedCompetition(Long competitorId, Long competitionId);
+    Competitor getCompetitorById(Long id);
 }

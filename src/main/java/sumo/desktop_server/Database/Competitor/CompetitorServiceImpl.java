@@ -35,4 +35,9 @@ public class CompetitorServiceImpl implements CompetitorService {
 
         return categories;
     }
+
+    @Override
+    public Competitor getCompetitorById(Long id) {
+        return competitorRepository.findCompetitorById(id);
+    }
 }

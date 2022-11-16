@@ -24,4 +24,23 @@ public class RegistrationServiceImpl implements RegistrationService {
 
         return registrationRepository.findRegistrationByCategoryAtCompetitionAndCompetitor(category, competitor);
     }
+
+    @Override
+    public Registration addRegistrationToCompetitor(Long categoryAtCompetitionId, Long competitorId) {
+        Competitor competitor = competitorRepository.findCompetitorById(competitorId);
+        CategoryAtCompetition category = categoryAtCompetitionRepository.findCategoryAtCompetitionById(categoryAtCompetitionId);
+        Registration newRegistration = new Registration();
+        newRegistration.setCompetitor(competitor);
+        newRegistration.setCategoryAtCompetition(category);
+        return registrationRepository.save(newRegistration);
+    }
+
+    @Override
+    public long removeRegistrationFromCompetitor(Long categoryAtCompetitionId, Long competitorId) {
+        Competitor competitor = competitorRepository.findCompetitorById(competitorId);
+        CategoryAtCompetition category = categoryAtCompetitionRepository.findCategoryAtCompetitionById(categoryAtCompetitionId);
+        return registrationRepository.deleteByCategoryAtCompetitionAndCompetitor(category,competitor);
+    }
+
+
 }
