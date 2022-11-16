@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "SECIURITY_TOKENS")
+@Table(name = "SECURITY_TOKENS")
 @Getter
 @Setter
 public class SecurityTokens {

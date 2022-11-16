@@ -1,21 +1,18 @@
-package sumo.desktop_server.Database.ActualLogedUser;
+package sumo.desktop_server.Database.CurrentLogedUser;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "SECIURITY_TOKENS")
+@Table(name = "CURENT_LOGGED_USER")
 @Getter
 @Setter
-public class ActualLoggedUser {
+public class CurrentLoggedUser {
 
     @Id
     @Column(name = "USERNAME")
