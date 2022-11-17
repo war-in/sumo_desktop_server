@@ -14,6 +14,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
+import sumo.desktop_server.Database.CurrentLogedUser.CurrentLoggedUser;
 import sumo.desktop_server.Database.SeciurityTokens.SecurityTokenService;
 import sumo.desktop_server.Database.SeciurityTokens.SecurityTokens;
 
@@ -58,6 +59,9 @@ public class SumoWebServerConnector {
             .retrieve()
             .toEntity(SecurityTokens.class)
             .block();
+        CurrentLoggedUser currentLoggedUser = new CurrentLoggedUser();
+        currentLoggedUser.setUsername(login);
+        result.getBody().setUser(currentLoggedUser);
         securityTokenService.saveSecurityTokens(result.getBody());
         return result.getBody() != null &&
             result.getBody().getRefreshToken() != null &&

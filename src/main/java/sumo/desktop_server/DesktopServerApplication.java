@@ -10,7 +10,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @SpringBootApplication
 public class DesktopServerApplication {
 
-
     public static void main(String[] args) {
         SpringApplication.run(DesktopServerApplication.class, args);
     }
