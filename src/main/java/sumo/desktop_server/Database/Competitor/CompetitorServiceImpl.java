@@ -1,9 +1,9 @@
 package sumo.desktop_server.Database.Competitor;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import sumo.desktop_server.Database.Category.Category;
+import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetition;
 import sumo.desktop_server.Database.Competition.Competition;
 import sumo.desktop_server.Database.Competition.CompetitionRepository;
 import sumo.desktop_server.Database.Registrations.Registration;
@@ -34,6 +34,17 @@ public class CompetitorServiceImpl implements CompetitorService {
         registrations.forEach(registration -> categories.add(registration.getCategoryAtCompetition().getCategory()));
 
         return categories;
+    }
+
+    @Override
+    public List<CategoryAtCompetition> getCompetitorCategoriesAtCompetitionAtSpecifiedCompetition(Long competitorId, Long competitionId) {
+        Competitor competitor = competitorRepository.findCompetitorById(competitorId);
+        Competition competition = competitionRepository.findCompetitionById(competitionId);
+
+        List<CategoryAtCompetition> categoryAtCompetitions = registrationRepository
+            .findRegistrationsByCompetitor(competitor)
+            .stream().map(Registration::getCategoryAtCompetition).toList();
+        return categoryAtCompetitions;
     }
 
     @Override

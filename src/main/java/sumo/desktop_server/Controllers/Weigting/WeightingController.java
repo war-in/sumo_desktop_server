@@ -97,7 +97,7 @@ public class WeightingController {
         return ResponseEntity.ok().body(result);
     }
 
-    @GetMapping("/getCategoriesForCompetitor")
+    @GetMapping("/getAvailableCategoriesForCompetitor")
     public ResponseEntity<List<CategoryAtCompetition>> getCategoriesForCompetitor(@RequestParam Long competitorId, @RequestParam Long competitionId){
         Competitor competitor = competitorService.getCompetitorById(competitorId);
         List<CategoryAtCompetition> result  = competitionService.getCategoriesAtCompetition(competitionId).stream().filter(categories -> {
@@ -105,4 +105,11 @@ public class WeightingController {
         }).toList();
         return ResponseEntity.ok().body(result);
     }
+
+    @GetMapping("/getCategoryOfCompetitionOfCompetitor")
+    public ResponseEntity<List<CategoryAtCompetition>> getRegistrationOfCompetitor(@RequestParam Long competitorId, @RequestParam Long competitionId){
+        List<CategoryAtCompetition> result = competitorService.getCompetitorCategoriesAtCompetitionAtSpecifiedCompetition(competitorId, competitionId);
+        return ResponseEntity.ok().body(result);
+    }
+
 }
