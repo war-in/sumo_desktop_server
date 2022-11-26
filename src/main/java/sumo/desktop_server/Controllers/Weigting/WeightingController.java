@@ -93,8 +93,8 @@ public class WeightingController {
 
     @DeleteMapping("/removeRegistration")
     public ResponseEntity<Long> removeCategoryToCompetitor(@RequestParam Long competitorId, @RequestParam Long categoryAtCompetitionId) {
-        Long result = registrationService.removeRegistrationFromCompetitor(categoryAtCompetitionId, competitorId);
-        return ResponseEntity.ok().body(result);
+        registrationService.removeRegistrationFromCompetitor(categoryAtCompetitionId, competitorId);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/getAvailableCategoriesForCompetitor")
