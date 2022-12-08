@@ -14,6 +14,8 @@ import sumo.desktop_server.Database.CompetitorInDraw.CompetitorInDraw;
 import sumo.desktop_server.Database.CompetitorInDraw.CompetitorInDrawRepository;
 import sumo.desktop_server.Database.DrawType.DrawType;
 import sumo.desktop_server.Database.DrawType.DrawTypeRepository;
+import sumo.desktop_server.Database.Fight.Fight;
+import sumo.desktop_server.Database.Fight.FightService;
 
 import javax.transaction.Transactional;
 import java.util.*;
@@ -29,6 +31,7 @@ public class DrawServiceImpl implements DrawService {
     private final DrawRepository drawRepository;
     private final CompetitorInDrawRepository competitorInDrawRepository;
     private final CompetitorRepository competitorRepository;
+    private final FightService fightService;
 
     @Override
     public List<Competitor> prepareDraw(CompetitorsAndDrawType competitorsAndDrawType) {
@@ -99,8 +102,7 @@ public class DrawServiceImpl implements DrawService {
 
     @Override
     public JSONObject getDrawsDetailsByCompetition(Competition competition) {
-        List<Draw> allDraws = drawRepository.findAllBy();
-        List<Draw> draws = allDraws.stream().filter(draw -> draw.getCategoryAtCompetition().getCompetition() == competition).toList();
+        List<Draw> draws = getAllDrawsAtTheCompetition(competition);
 
         List<JSONObject> dataset = new ArrayList<>();
         draws.forEach(draw -> {
@@ -116,6 +118,30 @@ public class DrawServiceImpl implements DrawService {
         JSONObject result = new JSONObject();
         result.appendField("dataset", dataset);
         result.appendField("draws", draws);
+
+        return result;
+    }
+
+    @Override
+    public JSONObject getEndedDrawsByCompetition(Competition competition) {
+        List<Draw> draws = getAllDrawsAtTheCompetition(competition);
+        List<Draw> endedDraws = getEndedDraws(draws);
+
+        System.out.println(endedDraws);
+
+        List<JSONObject> dataset = new ArrayList<>();
+        endedDraws.forEach(draw -> {
+            JSONObject categoryData = new JSONObject();
+            categoryData.appendField("weight", draw.getCategoryAtCompetition().getCategory().getWeightCategory());
+            categoryData.appendField("age", draw.getCategoryAtCompetition().getCategory().getAgeCategory().getName());
+            categoryData.appendField("sex", draw.getCategoryAtCompetition().getCategory().getSex().getSex());
+            categoryData.appendField("id", draw.getId());
+
+            dataset.add(categoryData);
+        });
+
+        JSONObject result = new JSONObject();
+        result.appendField("dataset", dataset);
 
         return result;
     }
@@ -191,5 +217,20 @@ public class DrawServiceImpl implements DrawService {
             return this.flattenNestedLists((List<List<?>>) flattenedList);
 
         return (List<Competitor>) flattenedList;
+    }
+
+    private List<Draw> getAllDrawsAtTheCompetition(Competition competition) {
+        List<Draw> allDraws = drawRepository.findAllBy();
+        return allDraws.stream().filter(draw -> draw.getCategoryAtCompetition().getCompetition() == competition).toList();
+    }
+
+    private List<Draw> getEndedDraws(List<Draw> draws) {
+        return draws.stream().filter(this::isDrawEnded).toList();
+    }
+
+    private boolean isDrawEnded(Draw draw) {
+        List<Fight> fights = fightService.getFightsByDrawId(draw.getId());
+        System.out.println(fights.stream().filter(fight -> fight.getWhoIsWinner() == 0).toList());
+        return fights.stream().filter(fight -> fight.getWhoIsWinner() == 0 && fight.getFirstCompetitor() != null).toList().size() == 0;
     }
 }

@@ -14,4 +14,5 @@ public interface DrawService {
     List<Competitor> getCompetitorsInDraw(Long drawId);
 
     JSONObject getDrawsDetailsByCompetition(Competition competition);
+    JSONObject getEndedDrawsByCompetition(Competition competition);
 }
