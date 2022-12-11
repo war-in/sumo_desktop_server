@@ -50,4 +50,13 @@ public class ResultServiceImpl implements ResultService {
                 .stream().sorted(Comparator.comparing(Result::getPlacement))
                 .map(Result::getCompetitor).toList();
     }
+    public List<Result> getResultsByCategoryAtCompetitionId(Long categoryAtCompetitionId) {
+        CategoryAtCompetition categoryAtCompetition = categoryAtCompetitionRepository
+                .findCategoryAtCompetitionById(categoryAtCompetitionId);
+
+        return resultRepository
+                .findResultsByCategoryAtCompetition(categoryAtCompetition)
+                .stream().sorted(Comparator.comparing(Result::getPlacement))
+                .toList();
+    }
 }

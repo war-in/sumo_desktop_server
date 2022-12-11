@@ -40,7 +40,7 @@ INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) va
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (10, 10, 0, 'Poland');
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (11, 11, 0, 'Poland');
 
-INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (1, 1, 1);
+-- INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (1, 1, 1);
 INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (2, 2, 2);
 INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (3, 2, 3);
 INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (4, 2, 4);
@@ -54,7 +54,7 @@ INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competit
 
 INSERT into REGIONS (region) values ( 'EUROPE' );
 
-INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (1, 16, 'EUROPE');
+INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (1, 5, 'EUROPE');
 INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (2, 5, 'EUROPE');
 INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (3, 10, 'EUROPE');
 INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (4, 32, 'EUROPE');
@@ -938,6 +938,7 @@ INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, 
 INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (266, 'Aleksandra', 'Grygel', null, 'blank.png', '1992-01-01', 'female');
 INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (267, 'Magda', 'Skrajnowska', null, 'blank.png', '1998-01-01', 'female');
 INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (268, 'Wioleta', 'Kielar', null, 'WIOLETA KIELAR.jpg', '1988-01-01', 'female');
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (269, 'Weronika', 'Ostra', null, 'ostra.jpg', '1988-01-01', 'female');
 
 --Competitors
 INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (210, 210, 0, 'Poland');
@@ -1093,3 +1094,174 @@ INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competit
 INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (502, 12, 167);
 INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (503, 13, 100);
 INSERT into REGISTRATIONS (registration_id, category_at_competition_id, competitior_id) values (504, 14, 112);
+
+INSERT INTO RESULTS (result_id,category_at_competition_id,competitor_id,placement) values (1,1,1,1);
+INSERT INTO RESULTS (result_id,category_at_competition_id,competitor_id,placement) values (2,1,2,2);
+INSERT INTO RESULTS (result_id,category_at_competition_id,competitor_id,placement) values (3,1,3,4);
+INSERT INTO RESULTS (result_id,category_at_competition_id,competitor_id,placement) values (4,1,4,3);
+INSERT INTO RESULTS (result_id,category_at_competition_id,competitor_id,placement) values (5,1,5,5);
+
+
+INSERT INTO DRAWS (draw_id,category_at_competition_id,draw_type_id)  values (1,1,1);
+--round robin
+INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (1,1,1,1);
+INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (2,1,2,2);
+INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (3,1,3,3);
+INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (4,1,4,4);
+INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (5,1,5,5);
+
+
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (1,1,1,5,1,0);
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (2,1,2,4,1,1);
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (3,1,5,4,1,2);
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (4,1,1,3,1,3);
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (5,1,5,2,2,4);
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (6,1,4,3,1,5);
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (7,1,4,1,1,6);
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (8,1,3,2,1,7);
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (9,1,3,5,1,8);
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (10,1,1,2,1,9);
+--dogrywki
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (11,1,2,4,1,10);
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (12,1,4,3,1,11);
+INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (13,1,3,2,2,12);
+
+--ladder 8
+
+--round robin
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (1,1,1,1);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (2,1,2,2);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (3,1,3,3);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (4,1,4,4);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (5,1,5,5);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (6,1,6,6);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (7,1,7,7);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (8,1,8,8);
+
+--8
+--eliminacje
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (1,1,1,2,1,4);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (2,1,3,4,1,5);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (3,1,5,6,1,6);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (4,1,7,8,1,7);
+--
+-- --polfinaly
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (5,1,1,3,1,2);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (6,1,5,7,1,3);
+--
+-- --final
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (7,1,1,5,1,1);
+--
+-- --pusty
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (8,1,null,null,0,0);
+--
+-- --repasarze
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (9,1,2,4,1,11);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (10,1,6,8,1,10);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (11,1,2,3,1,9);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (12,1,6,7,1,8);
+
+--16
+--eliminacje
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (1,1,1,2,1,8);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (2,1,3,4,1,9);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (3,1,5,6,1,10);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (4,1,7,8,1,11);
+--
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (5,1,9,10,1,12);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (6,1,11,140,1,13);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (7,1,141,14,1,14);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (8,1,15,16,1,15);
+--
+--
+-- --cwiercfinaly
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (9,1,1,3,1,4);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (10,1,5,7,1,5);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (11,1,9,11,1,6);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (12,1,13,15,1,7);
+--
+--
+--
+-- --polfinaly
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (13,1,9,10,1,2);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (14,1,11,12,1,3);
+--
+-- --final
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (23,1,9,11,1,1);
+--
+-- --pusty
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (24,1,null,null,0,0);
+--
+-- --repasarze I runda
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (15,1,2,4,1,20);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (16,1,6,8,1,21);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (17,1,10,12,1,22);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (18,1,14,16,1,23);
+--
+-- --repasarze II runda
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (19,1,10,12,1,19);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (20,1,14,16,1,18);
+--
+--
+-- --brazy
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (21,1,2,12,1,19);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (22,1,6,10,1,18);
+
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (1,357,null,null,0,0);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (2,357,40,41,1,1);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (3,357,40,155,1,2);
+-- INSERT INTO FIGHTS (fight_id,draw_id,first_competitor_id,second_competitor_id,winner,number_of_place_in_draw) values (4,357,40,155,1,3);
+
+--16
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (374	,0	,0	,1	,null	,null);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (375	,1	,1	,1,	40	,41);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (376	,2	,1	,1	,40	,155);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (377	,3	,1	,1,	41,	154);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (378	,4	,1	,1,	40	,231);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (379	,5	,1	,1,	155,	100);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (380,	6,	2,	1,	230	,41);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (381,	7,	1,	1,	154,	193);
+--
+-- --eliminacje
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (382,	8,	1,	1,	40,	0);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (383,	9,	1,	1,	231,	80);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (384,	10,	1,	1,	155,	0);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (385,	11,	2,	1,	0,	100);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (386,	12,	2,	1,	0,	230);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (387,	13,	1,	1,	41,	0);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (388,	14,	1,	1,	154,	0);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (389,	15,	2,	1,	140,	193);
+--
+--
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (390,	16,	1,	1,	230,	155);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (391,	17,	1,	1,	231,	154);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (392,	18,	1,	1,	231,	100);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (393,	19,	1,	1,	230,	193);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (394,	20,	2,	1,	0,	231);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (395,	21,	2,	1,	0,	100);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (396,	22,	2,	1,	0,	230);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (397,	23,	2,	1,	0,	193);
+
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (9,1,40,1);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (10,1,0,2);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (11,1,231,3);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (12,1,80,4);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (13,1,155,5);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (14,1,100,6);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (15,1,230,7);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (16,1,41,8);
+--
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (17,1,154,9);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (18,1,140,10);
+-- INSERT INTO COMPETITORS_IN_DRAWS (competitor_in_draw_id, draw_id, competitor_id, number_of_place_in_draw) values (19,1,193,11);
+
+
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (382,	8,	1,	1,	40,	0);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (383,	9,	1,	1,	231,	80);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (384,	10,	1,	1,	155,	0);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (385,	11,	2,	1,	0,	100);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (386,	12,	2,	1,	0,	230);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (387,	13,	1,	1,	41,	0);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (388,	14,	1,	1,	154,	0);
+-- INSERT INTO FIGHTS (fight_id,number_of_place_in_draw,winner,draw_id,first_competitor_id,second_competitor_id) values (389,	15,	2,	1,	140,	193);
+
