@@ -60,4 +60,9 @@ public class CompetitionServiceImpl implements CompetitionService {
 
         return categoriesAndCompetitors;
     }
+
+    @Override
+    public List<Competition> getAllCompetitions() {
+        return competitionRepository.findAll();
+    }
 }

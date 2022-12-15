@@ -8,4 +8,5 @@ import java.util.List;
 public interface CompetitionService {
     List<Competitor> getAllCompetitors(Long competitionId);
     List<CategoryAndCompetitors> getCategoriesAndCompetitors(Long competitionId);
+    List<Competition> getAllCompetitions();
 }
