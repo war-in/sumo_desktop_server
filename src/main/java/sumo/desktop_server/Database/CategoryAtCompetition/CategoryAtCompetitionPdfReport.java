@@ -63,11 +63,9 @@ public class CategoryAtCompetitionPdfReport {
 
         List<Fight> fightList = fights.stream().sorted(Comparator.comparing(Fight::getNumberOfPlaceInDraw)).toList();
 
-
-
-
         try {
-            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("pdf.pdf"));
+            PdfWriter writer = PdfWriter.getInstance(document, out);
+            //PdfWriter.getInstance(document,out);
             document.open();
 
 
@@ -93,7 +91,6 @@ public class CategoryAtCompetitionPdfReport {
 
                 }
 
-
             }
             if (drawType == 8){
                 this.addLadder8(document, writer, competitorInDrawList, competitorLit, drawType,fightList);
@@ -109,8 +106,6 @@ public class CategoryAtCompetitionPdfReport {
 
         }catch (DocumentException ex) {
             logger.error("Error occurred: {0}", ex);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         }
 
 

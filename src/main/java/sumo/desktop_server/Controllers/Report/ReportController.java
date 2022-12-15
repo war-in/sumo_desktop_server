@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import sumo.desktop_server.Controllers.Utils.Draw.CompetitorsAndFightsInDraw;
 import sumo.desktop_server.Controllers.Utils.Report.GroupReportAgeAndSexDivision;
 import sumo.desktop_server.Controllers.Utils.Report.ResultsData;
+import sumo.desktop_server.Database.AgeCategory.AgeCategory;
+import sumo.desktop_server.Database.AgeCategory.AgeCategoryRepository;
 import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetition;
 import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetitionPdfReport;
 import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetitionRepository;
@@ -43,6 +45,7 @@ public class ReportController {
     private final CompetitorInDrawRepository competitorInDrawRepository;
     private final FightService fightService;
     private final CompetitionRepository competitionRepository;
+    private final AgeCategoryRepository ageCategoryRepository;
 
     @PostMapping("/save")
     public ResponseEntity<?> saveResults(@RequestBody ResultsData resultsData) {
@@ -77,24 +80,25 @@ public class ReportController {
         ByteArrayInputStream bis = generator.categoryAtCompetitionReport(results,competitors,categoryAtCompetition,draw,competitorInDrawList,competitorsAndFightsInDraw);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Disposition", "inline; filename=category_at_competition_report.pdf");
+        headers.add("Content-Disposition", "attachment; filename=individual_report.pdf");
 
         return ResponseEntity
                 .ok()
                 .headers(headers)
                 .cacheControl(CacheControl.noCache())
-                .contentType(MediaType.parseMediaType("application/pdf"))
+                .contentType(MediaType.APPLICATION_PDF)
                 .body(new InputStreamResource(bis));
 
     }
     @GetMapping("/pdf-report-full")
-    public ResponseEntity<InputStreamResource> fullReport(@RequestParam(name = "competition-id") Long competitionId) throws DocumentException, FileNotFoundException {
+    public ResponseEntity<InputStreamResource> fullReport(@RequestParam(name = "competition-id") Long competitionId,@RequestParam(name = "age-category-id") Long ageCategoryId,@RequestParam(name = "sex") String sex) throws DocumentException, FileNotFoundException {
         Competition competition = competitionRepository.findCompetitionById(competitionId);
         List<CategoryAtCompetition> categoryAtCompetitions = categoryAtCompetitionRepository.findCategoryAtCompetitionsByCompetition(competition);
         List<Result> results = resultService.getResultsByCategoryAtCompetitionId(categoryAtCompetitions.get(0).getId());
+        AgeCategory ageCategory = ageCategoryRepository.findAgeCategoryById(ageCategoryId);
         GroupReportAgeAndSexDivision groupReportAgeAndSexDivision = new GroupReportAgeAndSexDivision();
 
-        groupReportAgeAndSexDivision.generateReport(competition,"FAMELE","Junior",categoryAtCompetitions,results);
+        groupReportAgeAndSexDivision.generateReport(competition,sex,ageCategory,categoryAtCompetitions,results);
 
 
         return null;
