@@ -65,4 +65,10 @@ public class CompetitionServiceImpl implements CompetitionService {
     public List<Competition> getAllCompetitions() {
         return competitionRepository.findAll();
     }
+
+    @Override
+    public List<CategoryAtCompetition> getCategoriesAtCompetition(Long competitionId) {
+        Competition competition = competitionRepository.findCompetitionById(competitionId);
+        return categoryAtCompetitionRepository.findCategoryAtCompetitionsByCompetition(competition);
+    }
 }

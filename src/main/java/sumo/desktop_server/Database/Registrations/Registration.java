@@ -14,7 +14,10 @@ import javax.persistence.*;
 public class Registration {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "registration_id_seq",
+        sequenceName = "registration_id_seq",
+        initialValue = 1000)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "registration_id_seq")
     @Column(name = "REGISTRATION_ID")
     private long id;
 
