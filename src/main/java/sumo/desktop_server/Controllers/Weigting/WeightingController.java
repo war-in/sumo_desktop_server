@@ -100,9 +100,11 @@ public class WeightingController {
     @GetMapping("/getAvailableCategoriesForCompetitor")
     public ResponseEntity<List<CategoryAtCompetition>> getCategoriesForCompetitor(@RequestParam Long competitorId, @RequestParam Long competitionId){
         Competitor competitor = competitorService.getCompetitorById(competitorId);
+        List<CategoryAtCompetition> categoryAtCompetitions = competitorService.getCompetitorCategoriesAtCompetitionAtSpecifiedCompetition(competitorId,competitionId);
         List<CategoryAtCompetition> result  = competitionService.getCategoriesAtCompetition(competitionId).stream().filter(categories -> {
             return categories.getCategory().getSex().equals(competitor.getPersonalDetails().getSex());
         }).toList();
+        result = result.stream().filter(categoryAtCompetition -> ! categoryAtCompetitions.contains(categoryAtCompetition)).toList();
         return ResponseEntity.ok().body(result);
     }
 
