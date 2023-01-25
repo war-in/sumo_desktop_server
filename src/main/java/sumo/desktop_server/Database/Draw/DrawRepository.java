@@ -7,5 +7,5 @@ import java.util.List;
 public interface DrawRepository extends JpaRepository<Draw, Long> {
     Draw findDrawById(Long id);
     List<Draw> findAllBy();
-    List<Draw> findByCategoryAtCompetitionId(Long id);
+    Draw findByCategoryAtCompetitionId(Long id);
 }

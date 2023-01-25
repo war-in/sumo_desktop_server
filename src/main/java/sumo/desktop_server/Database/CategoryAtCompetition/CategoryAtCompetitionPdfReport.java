@@ -40,6 +40,13 @@ public class CategoryAtCompetitionPdfReport {
     Font fontSize_8 =  FontFactory.getFont(FontFactory.TIMES, 8f);
     Font fontSize_10 =  FontFactory.getFont(FontFactory.TIMES, 10f);
 
+    Font fontSize_5_Helvetica =  FontFactory.getFont(FontFactory.HELVETICA, 5f);
+    Font fontSize_8_Helvetica =  FontFactory.getFont(FontFactory.HELVETICA, 8f);
+    Font fontSize_8_Helvetica_Bold =  FontFactory.getFont(FontFactory.HELVETICA_BOLD, 8f);
+    Font fontSize_10_Helvetica =  FontFactory.getFont(FontFactory.HELVETICA, 10f);
+    Font fontSize_10_Helvetica_Bold =  FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10f);
+
+
 
     public ByteArrayInputStream categoryAtCompetitionReport(List<Result> results,List<Competitor> competitorLit, CategoryAtCompetition categoryAtCompetition, Draw draw, List<CompetitorInDraw> competitorInDrawList, List<Fight> fights){
         Document document = new Document(PageSize.A4);
@@ -73,7 +80,7 @@ public class CategoryAtCompetitionPdfReport {
             this.addToPodHead(document, sex.getSex(), ageCategoryName, weightCategory);
             if (drawType == 5){
                 int numberOfPlayersInDraw = competitorInDrawList.size();
-                this.addMainTable(document,numberOfPlayersInDraw);
+                this.addMainTable(document,numberOfPlayersInDraw,weightCategory);
                 BucketHelper bucketHelper = new BucketHelper(numberOfPlayersInDraw,competitorInDrawList,fightList);
                 this.addDetails(document, competitorLit,bucketHelper,results);
 
@@ -81,12 +88,12 @@ public class CategoryAtCompetitionPdfReport {
                 if (bucketHelperList.size() > 0) {
                     BucketHelper bucketHelper1 = bucketHelperList.get(0);
                     document.add(new Paragraph("\n\n\n"));
-                    Paragraph paragraph = new Paragraph("DOGRYWYKI");
+                    Paragraph paragraph = new Paragraph("PLAY-OFF");
                     paragraph.setAlignment(Element.ALIGN_CENTER);
                     document.add(paragraph);
                     document.add(new Paragraph("\n\n\n"));
                     logger.info("competitors in dogrywki: " + bucketHelper1.getCompetitorInDrawList().size());
-                    this.addMainTable(document,bucketHelper1.getCompetitorInDrawList().size());
+                    this.addMainTable(document,bucketHelper1.getCompetitorInDrawList().size(),weightCategory);
                     this.addDetails(document,competitorLit,bucketHelper1,results);
 
                 }
@@ -111,6 +118,71 @@ public class CategoryAtCompetitionPdfReport {
 
         return new ByteArrayInputStream(out.toByteArray());
     }
+    public void categoryAtCompetitionReport(PdfWriter writer, Document document,ByteArrayOutputStream out ,List<Result> results,List<Competitor> competitorLit, CategoryAtCompetition categoryAtCompetition, Draw draw, List<CompetitorInDraw> competitorInDrawList, List<Fight> fights){
+
+        Competition competition = categoryAtCompetition.getCompetition();
+        String city = competition.getCity();
+        CompetitionType type = competition.getType();
+
+        LocalDate date = categoryAtCompetition.getDate();
+
+        Category category = categoryAtCompetition.getCategory();
+        String weightCategory = category.getWeightCategory();
+        Sex sex = category.getSex();
+
+        AgeCategory ageCategory = category.getAgeCategory();
+        String ageCategoryName = ageCategory.getName();
+
+        int drawType = draw.getDrawType().getNumberOfCompetitors();
+        logger.info(Integer.toString(drawType));
+
+        List<Fight> fightList = fights.stream().sorted(Comparator.comparing(Fight::getNumberOfPlaceInDraw)).toList();
+
+        try {
+
+            //PdfWriter.getInstance(document,out)
+            this.addDocHead(document, type.getType(), city, date);
+            logger.info("tu jestem 2");
+
+            this.addToPodHead(document, sex.getSex(), ageCategoryName, weightCategory);
+            logger.info("tu jestem 3");
+            if (drawType == 5){
+                int numberOfPlayersInDraw = competitorInDrawList.size();
+                this.addMainTable(document,numberOfPlayersInDraw,weightCategory);
+                BucketHelper bucketHelper = new BucketHelper(numberOfPlayersInDraw,competitorInDrawList,fightList);
+                this.addDetails(document, competitorLit,bucketHelper,results);
+
+                List<BucketHelper> bucketHelperList = bucketHelper.generateBuckets();
+                if (bucketHelperList.size() > 0) {
+                    BucketHelper bucketHelper1 = bucketHelperList.get(0);
+                    document.add(new Paragraph("\n\n\n"));
+                    Paragraph paragraph = new Paragraph("PLAY-OFF");
+                    paragraph.setAlignment(Element.ALIGN_CENTER);
+                    document.add(paragraph);
+                    document.add(new Paragraph("\n\n\n"));
+                    logger.info("competitors in dogrywki: " + bucketHelper1.getCompetitorInDrawList().size());
+                    this.addMainTable(document,bucketHelper1.getCompetitorInDrawList().size(),weightCategory);
+                    this.addDetails(document,competitorLit,bucketHelper1,results);
+
+                }
+
+            }
+            logger.info("tu jestem 4");
+
+            if (drawType == 8){
+                this.addLadder8(document, writer, competitorInDrawList, competitorLit, drawType,fightList);
+
+            }
+            if (drawType == 16){
+                this.addLadder16(document,writer, competitorInDrawList, competitorLit, drawType,fightList);
+
+            }
+
+        }catch (DocumentException ex) {
+            logger.error("Error occurred: {0}", ex);
+        }
+
+    }
     private void addDocHead(Document document,String type, String city,LocalDate date) throws DocumentException {
         PdfPTable table = new PdfPTable(1);
         table.setWidthPercentage(50);
@@ -124,14 +196,16 @@ public class CategoryAtCompetitionPdfReport {
         table.addCell(hcell);
 
         hcell = new PdfPCell(new Phrase(city + " " + date, headFont));
+        logger.info(city + date);
         hcell.setHorizontalAlignment(Element.ALIGN_CENTER);
         table.addCell(hcell);
+
         document.add(table);
 
     }
     private void addToPodHead(Document document,String sex,String ageCategory, String weightCategory) throws DocumentException {
         Font fontSize_10 =  FontFactory.getFont(FontFactory.TIMES, 10f);
-        Paragraph paragraph1 = new Paragraph(sex + "    " + ageCategory + "     " + "Kategoria wagowa: " + weightCategory,fontSize_10);
+        Paragraph paragraph1 = new Paragraph(sex + "    " + ageCategory + "     " + "Weight category: " + weightCategory,fontSize_10);
         paragraph1.setAlignment(Element.ALIGN_CENTER);
 
         //document.setMargins(200, 36, 36, 36);
@@ -141,52 +215,52 @@ public class CategoryAtCompetitionPdfReport {
         document.add(new Paragraph("\n\n"));
     }
 
-    private void addMainTable(Document document,int numberOfPlayersInDraw) throws DocumentException {
+    private void addMainTable(Document document,int numberOfPlayersInDraw,String weightCategory) throws DocumentException {
         PdfPTable table = new PdfPTable(17 + numberOfPlayersInDraw);
         table.setWidthPercentage(100);
 
-        PdfPCell cell = new PdfPCell(new Phrase("Lp"));
+        PdfPCell cell = new PdfPCell(new Phrase("No.",fontSize_8_Helvetica));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setRowspan(2);//1
         table.addCell(cell);
 
-        cell = new PdfPCell(new Phrase("Los"));
+        cell = new PdfPCell(new Phrase("Draw place",fontSize_8_Helvetica));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setRowspan(2);//1
         table.addCell(cell);
 
-        cell = new PdfPCell(new Phrase("Waga 40kg"));
+        cell = new PdfPCell(new Phrase("Weight: " + weightCategory));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setColspan(12);
         table.addCell(cell);
 
         Font fontSize_10 = FontFactory.getFont(FontFactory.HELVETICA,10f);
-        cell = new PdfPCell(new Phrase("Rok ur",fontSize_10));
+        cell = new PdfPCell(new Phrase("Year of birth",fontSize_8_Helvetica));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setRowspan(2);
         table.addCell(cell);
 
-        cell = new PdfPCell(new Phrase("WYNIKI"));
+        cell = new PdfPCell(new Phrase("RESULTS"));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setColspan(numberOfPlayersInDraw);
         table.addCell(cell);
 
-        cell = new PdfPCell(new Phrase("Suma pkt",fontSize_10));
+        cell = new PdfPCell(new Phrase("Sum of points",fontSize_8_Helvetica));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setRowspan(2);
         table.addCell(cell);
 
-        cell = new PdfPCell(new Phrase("Miejsce",fontSize_10));
+        cell = new PdfPCell(new Phrase("Placement",fontSize_8_Helvetica));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setRowspan(2);
         table.addCell(cell);
 
-        cell = new PdfPCell(new Phrase("Nazwisko Imie"));
+        cell = new PdfPCell(new Phrase("Surname Name"));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setColspan(8);
         table.addCell(cell);
 
-        cell = new PdfPCell(new Phrase("Klub"));
+        cell = new PdfPCell(new Phrase("Country"));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setColspan(4);
         table.addCell(cell);
@@ -198,9 +272,7 @@ public class CategoryAtCompetitionPdfReport {
             cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(cell);
         }
-
-
-        document.add(table);
+        //document.add(table);
     }
     private void addDetails(Document document,List<Competitor> competitorList,BucketHelper bucketHelper,List<Result> results) throws DocumentException {
         int numberOfCompetitors = bucketHelper.getCompetitorInDrawList().size();
@@ -245,7 +317,7 @@ public class CategoryAtCompetitionPdfReport {
 
             updateTableContextAccorToPlacement(table,personalDetails.getName() + " " + personalDetails.getSurname(),placement);
 
-            updateTableContextAccorToPlacement(table,"No clubs right now",placement);
+            updateTableContextAccorToPlacement(table,competitor.getCountry(),placement);
 
 
             DateFormat df = new SimpleDateFormat("yy"); // Just the year, with 2 digits
@@ -320,7 +392,7 @@ public class CategoryAtCompetitionPdfReport {
             addComponent8(document,writer,padding[i],3,i,8,18f,ladderHelper,matches[i]);
             //document.add(new Paragraph("\n\n\n"));
         }
-        Paragraph paragraph = new Paragraph("REPECHAGE",fontSize_10);
+        Paragraph paragraph = new Paragraph("REPECHAGE",fontSize_10_Helvetica_Bold);
         paragraph.setAlignment(Element.ALIGN_CENTER);
         document.add(paragraph);
         this.addRepechage8(document,writer, ladderHelper);
@@ -344,7 +416,7 @@ public class CategoryAtCompetitionPdfReport {
             addComponent3(document,writer,padding[i%8],2,i,16,12f,ladderHelper,matches[i]);
 
         }
-        Paragraph paragraph = new Paragraph("REPECHAGE",fontSize_10);
+        Paragraph paragraph = new Paragraph("REPECHAGE",fontSize_10_Helvetica_Bold);
         paragraph.setAlignment(Element.ALIGN_CENTER);
         document.add(paragraph);
         this.addRepechage16(document,writer,ladderHelper);
@@ -1134,7 +1206,7 @@ public class CategoryAtCompetitionPdfReport {
         int[] matches = {14,14,14,20,15,15,15};
         for (int i =0; i<7; i++) {
             addRepechageComponent(document,writer,padding[i],1,i,8,10f,60f,matches[i],ladderHelper);
-            //document.add(new Paragraph("\n\n\n"));
+
         }
     }
     private void addRepechage8(Document document,PdfWriter writer, LadderHelper ladderHelper) throws DocumentException {
@@ -1157,14 +1229,7 @@ public class CategoryAtCompetitionPdfReport {
         PersonalDetails competitorLeft = ladderHelper.getActualLeftCompetitor().getPersonalDetails();
         PersonalDetails competitorRight = ladderHelper.getActualRightCompetitor().getPersonalDetails();
 
-        logger.info("competitor left: " + competitorLeft.getName() + ladderHelper.getActualLeftCompetitor().getId());
-        logger.info("competitor right: " +competitorRight.getName() + ladderHelper.getActualRightCompetitor().getId());
 
-        Fight actual = ladderHelper.getActualFight();
-        Fight opposite = ladderHelper.getOppositeFight();
-
-        logger.info("actual :" + actual.getNumberOfPlaceInDraw());
-        logger.info("opposite :" + opposite.getNumberOfPlaceInDraw());
 
 
         PdfPTable table = new PdfPTable(2);
@@ -1272,7 +1337,7 @@ public class CategoryAtCompetitionPdfReport {
 
                 //
                 float widthOfText = fontSize_10.getCalculatedBaseFont(true).getWidthPoint("3. miejsca",fontSize_10.getCalculatedSize());
-                FixText("3. miejsca",pdfPageWidth/2 - widthOfText/2,positionY + diffBetweenComponent *2 + 10f ,writer,10);
+                FixText("3. places",pdfPageWidth/2 - widthOfText/2,positionY + diffBetweenComponent *2 + 10f ,writer,10);
 
                 //rigth side
                 PdfPTable thirdPlaceTableRight = new PdfPTable(2);
@@ -1345,7 +1410,7 @@ public class CategoryAtCompetitionPdfReport {
         writer.getVerticalPosition(false);
         float positionY = writer.getVerticalPosition(true);
 
-        Font fontSize_4 =  FontFactory.getFont(FontFactory.TIMES, 4f);
+        Font fontSize_4 =  FontFactory.getFont(FontFactory.HELVETICA, 4f);
 
         PdfPTable table = new PdfPTable(2);
 
@@ -1444,9 +1509,10 @@ public class CategoryAtCompetitionPdfReport {
                 //3miejsce dzyndzel w dol lewa strona
                 cb.moveTo(newMoveToXLeft, moveToYLeft);
                 cb.lineTo(newMoveToXLeft, positionY + diffBetweenComponent * 2 );
+                cb.stroke();
 
                 float widthOfText = fontSize_10.getCalculatedBaseFont(true).getWidthPoint("3. miejsca",fontSize_10.getCalculatedSize());
-                FixText("3. miejsca",pdfPageWidth/2 - widthOfText/2,positionY + diffBetweenComponent *2 + 10f ,writer,10);
+                FixText("3. places",pdfPageWidth/2 - widthOfText/2,positionY + diffBetweenComponent *2 + 10f ,writer,10);
 
                 ladderHelper.loadActualMatch(1);
 
@@ -1536,7 +1602,7 @@ public class CategoryAtCompetitionPdfReport {
     private static void FixText(String text, float x, float y,PdfWriter writer,int size) {
         try {
             PdfContentByte cb = writer.getDirectContent();
-            BaseFont bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            BaseFont bf = BaseFont.createFont(BaseFont.HELVETICA_BOLD, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             cb.saveState();
             cb.beginText();
             cb.moveText(x, y);

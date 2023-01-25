@@ -22,7 +22,7 @@ public class Draw {
     @Column(name = "DRAW_ID")
     private long id;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "CATEGORY_AT_COMPETITION_ID")
     private CategoryAtCompetition categoryAtCompetition;
 

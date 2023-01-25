@@ -11,4 +11,5 @@ import java.util.List;
 public interface CategoryAtCompetitionRepository extends JpaRepository<CategoryAtCompetition, Long> {
     List<CategoryAtCompetition> findCategoryAtCompetitionsByCompetition(Competition competition);
     CategoryAtCompetition findCategoryAtCompetitionById(Long id);
+    //List<CategoryAtCompetition> findCategoryAtCompetitionByCompetitionIdAndCategory(Long competitionId,Long categoryId);
 }
