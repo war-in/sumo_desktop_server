@@ -35,6 +35,13 @@ public class DrawController {
         return ResponseEntity.ok().body(categoriesAndCompetitors);
     }
 
+    @GetMapping("/categories-with-competitors-with-weight-validation")
+    public ResponseEntity<List<CategoryAndCompetitors>> getCategoriesWithCompetitorsWithWeightValidation(@RequestParam Long competitionId) {
+        List<CategoryAndCompetitors> categoriesAndCompetitors = competitionService.getCategoriesAndCompetitors(competitionId);
+
+        return ResponseEntity.ok().body(categoriesAndCompetitors);
+    }
+
     @GetMapping("/suggested-draw-types")
     public ResponseEntity<List<DrawType>> getSuggestedDrawTypes(@RequestParam Long numberOfCompetitors, @RequestParam String region) {
         List<DrawType> drawTypes = drawTypeService.getDrawTypesAboveSpecifiedNumberOfCompetitors(numberOfCompetitors, region);

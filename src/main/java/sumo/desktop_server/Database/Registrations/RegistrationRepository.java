@@ -11,4 +11,5 @@ public interface RegistrationRepository extends JpaRepository<Registration, Long
     Registration findRegistrationByCategoryAtCompetitionAndCompetitor(CategoryAtCompetition categoryAtCompetition, Competitor competitor);
     List<Registration> findRegistrationsByCategoryAtCompetition(CategoryAtCompetition categoryAtCompetition);
     List<Registration> findRegistrationsByCompetitor(Competitor competitor);
+    long deleteByCategoryAtCompetitionAndCompetitor(CategoryAtCompetition categoryAtCompetition,Competitor competitor);
 }

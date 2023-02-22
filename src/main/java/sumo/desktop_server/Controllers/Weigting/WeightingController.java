@@ -2,6 +2,7 @@ package sumo.desktop_server.Controllers.Weigting;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,9 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import sumo.desktop_server.Controllers.Utils.Weighting.WeightingDetails;
 import sumo.desktop_server.Database.Category.Category;
+import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetition;
 import sumo.desktop_server.Database.Competition.CompetitionService;
 import sumo.desktop_server.Database.Competitor.Competitor;
 import sumo.desktop_server.Database.Competitor.CompetitorService;
+import sumo.desktop_server.Database.Registrations.Registration;
+import sumo.desktop_server.Database.Registrations.RegistrationService;
 import sumo.desktop_server.Database.WeighedCompetitor.WeighedCompetitor;
 import sumo.desktop_server.Database.WeighedCompetitor.WeighedCompetitorService;
 
@@ -27,6 +31,8 @@ public class WeightingController {
     private final WeighedCompetitorService weighedCompetitorService;
     private final CompetitionService competitionService;
     private final CompetitorService competitorService;
+
+    private final RegistrationService registrationService;
 
     @GetMapping("/weighting-details")
     public ResponseEntity<WeighedCompetitor> getWeighingDetails(@RequestParam Long categoryAtCompetitionId, @RequestParam Long competitorId) {
@@ -78,4 +84,34 @@ public class WeightingController {
         });
         return ResponseEntity.ok().body(results);
     }
+
+    @PostMapping("/addRegistration")
+    public ResponseEntity<Registration> addCategoryToCompetitor(@RequestParam Long competitorId, @RequestParam Long categoryAtCompetitionId) {
+        Registration result = registrationService.addRegistrationToCompetitor(categoryAtCompetitionId, competitorId);
+        return ResponseEntity.ok().body(result);
+    }
+
+    @DeleteMapping("/removeRegistration")
+    public ResponseEntity<Long> removeCategoryToCompetitor(@RequestParam Long competitorId, @RequestParam Long categoryAtCompetitionId) {
+        registrationService.removeRegistrationFromCompetitor(categoryAtCompetitionId, competitorId);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/getAvailableCategoriesForCompetitor")
+    public ResponseEntity<List<CategoryAtCompetition>> getCategoriesForCompetitor(@RequestParam Long competitorId, @RequestParam Long competitionId){
+        Competitor competitor = competitorService.getCompetitorById(competitorId);
+        List<CategoryAtCompetition> categoryAtCompetitions = competitorService.getCompetitorCategoriesAtCompetitionAtSpecifiedCompetition(competitorId,competitionId);
+        List<CategoryAtCompetition> result  = competitionService.getCategoriesAtCompetition(competitionId).stream().filter(categories -> {
+            return categories.getCategory().getSex().equals(competitor.getPersonalDetails().getSex());
+        }).toList();
+        result = result.stream().filter(categoryAtCompetition -> ! categoryAtCompetitions.contains(categoryAtCompetition)).toList();
+        return ResponseEntity.ok().body(result);
+    }
+
+    @GetMapping("/getCategoryOfCompetitionOfCompetitor")
+    public ResponseEntity<List<CategoryAtCompetition>> getRegistrationOfCompetitor(@RequestParam Long competitorId, @RequestParam Long competitionId){
+        List<CategoryAtCompetition> result = competitorService.getCompetitorCategoriesAtCompetitionAtSpecifiedCompetition(competitorId, competitionId);
+        return ResponseEntity.ok().body(result);
+    }
+
 }
