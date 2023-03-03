@@ -133,7 +133,6 @@ public class LadderHelper {
         oppositeFight =  this.fights.get(this.actualFightIndexToArrayIndex.get(this.actualFightIndex + 2) );
 
         loadCompetitors();
-
     }
     //@TODO
     public void loadFinal(){

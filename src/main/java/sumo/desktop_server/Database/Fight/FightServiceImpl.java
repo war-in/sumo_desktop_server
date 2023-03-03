@@ -39,7 +39,7 @@ public class FightServiceImpl implements FightService {
             fightToSave.setDraw(draw);
             return fightRepository.save(fightToSave);
         }
-        fightFromDatabase.setWinner(fightToSave.isWinner());
+        fightFromDatabase.setWhoIsWinner(fightToSave.getWhoIsWinner());
 
         return fightRepository.save(fightFromDatabase);
     }

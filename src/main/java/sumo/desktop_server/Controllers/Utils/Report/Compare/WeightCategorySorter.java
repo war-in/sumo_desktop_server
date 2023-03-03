@@ -11,11 +11,14 @@ public class WeightCategorySorter implements Comparator<CategoryAtCompetition> {
     public int compare(CategoryAtCompetition o1, CategoryAtCompetition o2) {
         String weightCategory = o1.getCategory().getWeightCategory();
         String weightCategory2 = o2.getCategory().getWeightCategory();
-
-        if (weightCategory.equals("open")){
+        weightCategory=weightCategory.replace("kg","");
+        weightCategory2=weightCategory2.replace("kg","");
+        weightCategory=weightCategory.strip();
+        weightCategory2=weightCategory2.strip();
+        if (weightCategory.equals("OPEN")){
             return 1;
         }
-        if (weightCategory2.equals("open")){
+        if (weightCategory2.equals("OPEN")){
             return -1;
         }
         return Integer.compare(Integer.parseInt(weightCategory),Integer.parseInt(weightCategory2));

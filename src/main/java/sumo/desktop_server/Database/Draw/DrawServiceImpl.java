@@ -158,7 +158,8 @@ public class DrawServiceImpl implements DrawService {
         groups.add(new ArrayList<>());
         groups.add(new ArrayList<>());
 
-        Map<String, List<Competitor>> competitorsByCountries = competitors.stream().collect(Collectors.groupingBy(Competitor::getCountry));
+        Map<String, List<Competitor>> competitorsByCountries = competitors.stream()
+            .collect(Collectors.groupingBy(Competitor::getCountry));
 
         List<List<Competitor>> sortedCompetitorsByCountries = competitorsByCountries.values().stream()
                 .sorted(Comparator.comparingInt(List::size)).toList();

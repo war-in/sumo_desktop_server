@@ -29,4 +29,6 @@ public class Competitor {
 
     @Column(name = "COUNTRY")
     private String country;
+
+    private Boolean isWeighted;
 }

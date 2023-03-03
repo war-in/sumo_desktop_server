@@ -3,9 +3,9 @@ package sumo.desktop_server.Controllers.Utils.Report.Compare;
 import java.util.Arrays;
 
 public enum AgeCategoryEnum {
-    YOUNGSTER("Młodzik",5),
+    YOUNGSTER("Mlodzik",5),
     CADET("Kadet",3),
-    YOUTH("Młodzieżowiec",2),
+    YOUTH("Mlodziezowiec",2),
     SENIOR("Senior",1);
 
     private final String text;
