@@ -46,6 +46,7 @@ public class LadderHelper {
     public LadderHelper(List<Fight> fights, List<CompetitorInDraw> competitorInDrawList) {
         this.competitorInDrawList = competitorInDrawList;
         this.fights = fights;
+        generateLinearTableFromFights();
     }
 
     public Map<Integer, Integer> getActualFightIndexToArrayIndex() {

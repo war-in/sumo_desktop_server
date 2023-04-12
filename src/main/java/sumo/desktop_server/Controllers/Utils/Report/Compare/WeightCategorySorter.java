@@ -15,10 +15,10 @@ public class WeightCategorySorter implements Comparator<CategoryAtCompetition> {
         weightCategory2=weightCategory2.replace("kg","");
         weightCategory=weightCategory.strip();
         weightCategory2=weightCategory2.strip();
-        if (weightCategory.equals("OPEN")){
+        if (weightCategory.equals("OPEN") || weightCategory.equals("open")){
             return 1;
         }
-        if (weightCategory2.equals("OPEN")){
+        if (weightCategory2.equals("OPEN") || weightCategory2.equals("open")){
             return -1;
         }
         return Integer.compare(Integer.parseInt(weightCategory),Integer.parseInt(weightCategory2));

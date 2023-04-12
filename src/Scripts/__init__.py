@@ -6,7 +6,7 @@ if __name__ == '__main__':
     CsvFile = sys.argv[2] if sys.argv[2] else "empty"
     resultFile = sys.argv[3] if sys.argv[3] else "empty"
 
-    CsvFile = open(CsvFile)
+    CsvFile = open(CsvFile,encoding="utf-8")
     resultFile = open(resultFile, mode='a',encoding="utf-8")
     print(sys.argv[1])
 
@@ -46,6 +46,11 @@ MaleDict = {
 }
 
 resultFile.write('''
+
+INSERT into PERSONAL_DETAILS (personal_details_id, name, surname, phone_number, link_to_profile_picture, birth_date, sex) values (0, 'Free', 'Fight', null, null, null, null);
+INSERT into COMPETITORS (competitor_id, personal_details_id, status, country) values (0, 0, 0, 'Free Fight');
+
+
 --Age categories
 INSERT into AGE_CATEGORIES (age_category_id, name, oldest_competitor_birth_year, youngest_competitor_birth_year) values (10, 'U21', '2001-01-01', '2004-12-31');
 INSERT into AGE_CATEGORIES (age_category_id, name, oldest_competitor_birth_year, youngest_competitor_birth_year) values (11, 'U23', '1999-01-01', '2004-12-31');
@@ -84,27 +89,15 @@ INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_
 INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_id, category_id, date) values (56, 10, 56, '2022-08-31');
 INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_id, category_id, date) values (57, 10, 57, '2022-08-31');
 
-INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_id, category_id, date) values (58, 10, 58, '2022-08-31');
-INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_id, category_id, date) values (59, 10, 59, '2022-08-31');
-INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_id, category_id, date) values (60, 10, 60, '2022-08-31');
-INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_id, category_id, date) values (61, 10, 61, '2022-08-31');
-INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_id, category_id, date) values (62, 10, 62, '2022-08-31');
-INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_id, category_id, date) values (63, 10, 63, '2022-08-31');
-INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_id, category_id, date) values (64, 10, 64, '2022-08-31');
-INSERT into CATEGORIES_AT_COMPETITIONS (category_at_competition_id, competition_id, category_id, date) values (65, 10, 65, '2022-08-31');
-
 
 INSERT into REGIONS (region) values ( 'EUROPE' );
 
-INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (1, 5, 'EUROPE');
+INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (1, 0, 'EUROPE');
 INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (8, 8, 'EUROPE');
 INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (9, 16, 'EUROPE');
-INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (2, 5, 'EUROPE');
-INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (3, 10, 'EUROPE');
 INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (4, 32, 'EUROPE');
 INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (5, 64, 'EUROPE');
-INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (6, 0, 'EUROPE');
-INSERT into DRAW_TYPES (draw_type_id, number_of_competitors, region) values (7, 8, 'EUROPE');
+
 
 INSERT INTO POINTS_CLASSIFICATIONS(point_classification_id,competition_id,age_category_id,placement_on_competition,number_of_points) values (1,10,12,1,20);
 INSERT INTO POINTS_CLASSIFICATIONS(point_classification_id,competition_id,age_category_id,placement_on_competition,number_of_points) values (2,10,12,2,15);
@@ -117,8 +110,10 @@ for id, row in enumerate(CsvFile):
     id = id + 100
     row = row.strip()
     row = row.split(',')
+    for i in row:
+        i.strip()
     date = row[2].split('/')
-    date = date[2] + '-' + date[1] + '-' + date[0]
+    date = date[2] + '-' + date[0] + '-' + date[1]
     gender = "male" if row[3] == "Man" else "female"
     print(row)
     # Personal Details

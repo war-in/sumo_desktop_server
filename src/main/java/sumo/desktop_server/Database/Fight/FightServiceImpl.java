@@ -29,15 +29,20 @@ public class FightServiceImpl implements FightService {
 
         Draw draw = drawRepository.findDrawById(fightToSave.getDraw().getId());
         Fight fightFromDatabase = fightRepository.findFightByDrawAndNumberOfPlaceInDraw(draw, fightToSave.getNumberOfPlaceInDraw());
+        Competitor firstCompetitor = competitorRepository.findCompetitorById(fightToSave.getFirstCompetitor().getId());
+        Competitor secondCompetitor = competitorRepository.findCompetitorById(fightToSave.getSecondCompetitor().getId());
 
-        if(fightFromDatabase == null) {
-            Competitor firstCompetitor = competitorRepository.findCompetitorById(fightToSave.getFirstCompetitor().getId());
-            Competitor secondCompetitor = competitorRepository.findCompetitorById(fightToSave.getSecondCompetitor().getId());
-
+        if (fightFromDatabase == null) {
             fightToSave.setFirstCompetitor(firstCompetitor);
             fightToSave.setSecondCompetitor(secondCompetitor);
             fightToSave.setDraw(draw);
             return fightRepository.save(fightToSave);
+        }
+        if (secondCompetitor != null) {
+            fightFromDatabase.setSecondCompetitor(secondCompetitor);
+        }
+        if (firstCompetitor != null) {
+            fightFromDatabase.setFirstCompetitor(firstCompetitor);
         }
         fightFromDatabase.setWhoIsWinner(fightToSave.getWhoIsWinner());
 
@@ -55,7 +60,7 @@ public class FightServiceImpl implements FightService {
         List<Fight> fights = fightRepository.findFightsByDraw(draw);
 
         return fights.stream()
-                .sorted(Comparator.comparing(Fight::getNumberOfPlaceInDraw))
-                .toList();
+            .sorted(Comparator.comparing(Fight::getNumberOfPlaceInDraw))
+            .toList();
     }
 }

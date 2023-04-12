@@ -102,12 +102,13 @@ public class BucketHelper {
     public int getFightResultForCompetitor(int numberOfRound,Long competitorId){
         return roundToResult.get(numberOfRound).get(competitorId);
     }
-    public List<BucketHelper> generateBuckets(){
+    public List<BucketHelper> generateBuckets(int numberOfPlayers){
         List<BucketHelper> bucketHelperList = new ArrayList<>();
 
         idToSumOfPoints.forEach((integer, list) -> {
             if (list.size() > 2){
-                List<Fight> restFights = fights.subList(10,fights.size() );
+//                10 zamianst liczby walk xd
+                List<Fight> restFights = fights.subList(numberOfPlayers*(numberOfPlayers-1)/2,fights.size() );
                 List<Competitor> restCompetitors = new ArrayList<>();
                 restFights.forEach(fight -> {
                     restCompetitors.add(fight.getFirstCompetitor());

@@ -9,6 +9,7 @@ import sumo.desktop_server.Database.Competitor.CompetitorRepository;
 
 import javax.transaction.Transactional;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -36,8 +37,29 @@ public class ResultServiceImpl implements ResultService {
         competitorsInOrder.subList(results.size(), competitorsInOrder.size())
             .forEach(competitor -> {
                 competitor = competitorRepository.findCompetitorById(competitor.getId());
-                resultRepository.save(new Result(0, categoryAtCompetition, competitor, i.getAndIncrement()));
+                resultRepository.save(new Result(0, categoryAtCompetition, competitor, i.getAndIncrement()+1));
             });
+    }
+
+    @Override
+    public void overwriteResults(Long categoryAtCompetitionId, List<Competitor> competitorsInOrder) {
+        CategoryAtCompetition categoryAtCompetition = categoryAtCompetitionRepository
+            .findCategoryAtCompetitionById(categoryAtCompetitionId);
+
+        List<Result> results = resultRepository.findResultsByCategoryAtCompetition(categoryAtCompetition);
+
+        if (results != null){
+            resultRepository.deleteAll(results);
+        }
+
+        results = new LinkedList<>();
+        AtomicInteger place= new AtomicInteger(1);
+        List<Result> finalResults = results;
+        competitorsInOrder.forEach(competitor -> {
+            finalResults.add(new Result(0,categoryAtCompetition,competitor,place.get()));
+            place.getAndIncrement();
+        });
+        resultRepository.saveAll(finalResults);
     }
 
     @Override

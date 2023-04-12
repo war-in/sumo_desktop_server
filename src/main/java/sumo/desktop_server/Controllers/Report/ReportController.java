@@ -23,6 +23,7 @@ import sumo.desktop_server.Database.CategoryAtCompetition.CategoryAtCompetitionR
 import sumo.desktop_server.Database.Competition.Competition;
 import sumo.desktop_server.Database.Competition.CompetitionRepository;
 import sumo.desktop_server.Database.Competitor.Competitor;
+import sumo.desktop_server.Database.Draw.DrawService;
 import sumo.desktop_server.Database.PointsClassification.PointsClassification;
 import sumo.desktop_server.Database.PointsClassification.PointsClassificationRepository;
 import sumo.desktop_server.Database.Results.Result;
@@ -45,9 +46,13 @@ public class ReportController {
     private final PointsClassificationRepository pointsClassificationRepository;
     private final ReportService reportService;
 
+    private final DrawService drawService;
+
     @PostMapping("/save")
     public ResponseEntity<?> saveResults(@RequestBody ResultsData resultsData) {
-        resultService.saveResults(resultsData.getCategoryAtCompetitionId(), resultsData.getCompetitorsInOrder());
+//        category id from response is draw id :/
+        CategoryAtCompetition categoryAtCompetition = drawService.getCategoryAtCompetitionForDraw(resultsData.getCategoryAtCompetitionId());
+        resultService.overwriteResults(categoryAtCompetition.getId(), resultsData.getCompetitorsInOrder());
         return ResponseEntity.ok().build();
     }
 

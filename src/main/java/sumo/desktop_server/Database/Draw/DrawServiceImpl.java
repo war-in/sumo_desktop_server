@@ -66,9 +66,12 @@ public class DrawServiceImpl implements DrawService {
             categoryAtCompetitionRepository.findCategoryAtCompetitionById(
                 dataToSaveDraw.getCategoryAtCompetitionId());
 
-        Draw drawFromDatabase = drawRepository.findDrawById(categoryAtCompetition.getId());
-        if (drawFromDatabase == null)
+        Draw drawFromDatabase = drawRepository.findByCategoryAtCompetitionId(categoryAtCompetition.getId());
+        if (drawFromDatabase == null) {
             drawFromDatabase = new Draw(categoryAtCompetition.getId(), categoryAtCompetition, drawType);
+        }else{
+            drawRepository.delete(drawFromDatabase);
+        }
 
         Draw draw = drawRepository.save(drawFromDatabase);
 
@@ -78,7 +81,7 @@ public class DrawServiceImpl implements DrawService {
             CompetitorInDraw competitorInDraw = new CompetitorInDraw();
             competitorInDraw.setDraw(draw);
             competitorInDraw.setCompetitor(competitors.get(i));
-            competitorInDraw.setNumberOfPlaceInDraw(i);
+            competitorInDraw.setNumberOfPlaceInDraw(i+1);
 
             competitorInDrawRepository.save(competitorInDraw);
         }
@@ -192,5 +195,14 @@ public class DrawServiceImpl implements DrawService {
             return this.flattenNestedLists((List<List<?>>) flattenedList);
 
         return (List<Competitor>) flattenedList;
+    }
+
+    @Override
+    public CategoryAtCompetition getCategoryAtCompetitionForDraw(Long drawId) {
+        try {
+            return drawRepository.findDrawById(drawId).getCategoryAtCompetition();
+        } catch (NullPointerException exception){
+            return new CategoryAtCompetition();
+        }
     }
 }
